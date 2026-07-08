@@ -1,0 +1,64 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The Ramsac Podcast — Project Hub</title>
+<style>
+  :root{
+    --paper:#f5f6f4;
+    --paper-raised:#ffffff;
+    --ink:#171b1a;
+    --ink-soft:#52605c;
+    --ink-faint:#84918c;
+    --line:#d7dcd8;
+    --signal:#0f7a73;
+    --signal-soft:#e1efec;
+    --cyber:#a6483a;
+    --cyber-soft:#f3e4e1;
+    --serif: Georgia, 'Iowan Old Style', 'Times New Roman', serif;
+    --sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    --mono: ui-monospace, 'SF Mono', 'Cascadia Mono', Consolas, monospace;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0; background:var(--paper); color:var(--ink); font-family:var(--sans); line-height:1.6;}
+  .page{max-width:720px; margin:0 auto; padding:72px 24px 96px;}
+  .eyebrow{font-family:var(--mono); font-size:12px; letter-spacing:.12em; text-transform:uppercase; color:var(--signal); margin:0 0 10px;}
+  h1{font-family:var(--serif); font-size:36px; font-weight:400; margin:0 0 14px; line-height:1.2;}
+  .dek{font-size:16.5px; color:var(--ink-soft); max-width:60ch; margin:0 0 40px;}
+  .card{
+    display:block; background:var(--paper-raised); border:1px solid var(--line); border-left:3px solid var(--signal);
+    padding:22px 26px; margin-bottom:16px; text-decoration:none; color:inherit;
+  }
+  .card:hover{border-left-color:var(--cyber);}
+  .card h2{font-family:var(--serif); font-size:20px; font-weight:400; margin:0 0 6px; color:var(--ink);}
+  .card p{font-size:14.5px; color:var(--ink-soft); margin:0;}
+  .card .tag{font-family:var(--mono); font-size:11px; letter-spacing:.06em; text-transform:uppercase; color:var(--signal); display:block; margin-bottom:8px;}
+  footer{margin-top:48px; padding-top:20px; border-top:2px solid var(--ink); font-family:var(--mono); font-size:11.5px; color:var(--ink-faint);}
+  footer a{color:var(--ink-faint);}
+</style>
+</head>
+<body>
+<div class="page">
+  <p class="eyebrow">Project hub</p>
+  <h1>The Ramsac Podcast</h1>
+  <p class="dek">A three-part, constructive-format podcast that turns existing ramsac.com blog content into short, plain-English conversations for business leaders. This page links to the working documents in the <a href="https://github.com/jpsantam/ramsac-podcast">jpsantam/ramsac-podcast</a> repo.</p>
+
+  <a class="card" href="plan/working-plan.html">
+    <span class="tag">Working plan</span>
+    <h2>Full season map, pipeline &amp; episode briefs</h2>
+    <p>Brief, production pipeline, episode format template, all 15 episode briefs across the three miniseries (Cybersecurity → AI → Microsoft 365), content gaps, and open decisions.</p>
+  </a>
+
+  <a class="card" href="scripts/cybersecurity-ep01/script.html">
+    <span class="tag">Pilot script · draft v6</span>
+    <h2>Cybersecurity EP01 — "You're a Target Whether You Know It or Not"</h2>
+    <p>Full table-read script, recalibrated for a C-suite/IS-IT-leader audience. One line is flagged inline as needing a real ramsac figure before recording.</p>
+  </a>
+
+  <footer>
+    Status: pre-launch / draft — nothing here has been recorded or published. Source repo: <a href="https://github.com/jpsantam/ramsac-podcast">github.com/jpsantam/ramsac-podcast</a>
+  </footer>
+</div>
+</body>
+</html>
