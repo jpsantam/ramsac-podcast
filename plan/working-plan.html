@@ -1,0 +1,767 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Ramsac Podcast — Working Plan</title>
+<style>
+  :root{
+    --paper:#f5f6f4;
+    --paper-raised:#ffffff;
+    --ink:#171b1a;
+    --ink-soft:#52605c;
+    --ink-faint:#84918c;
+    --line:#d7dcd8;
+    --signal:#0f7a73;
+    --signal-soft:#e1efec;
+    --cyber:#a6483a;
+    --cyber-soft:#f3e4e1;
+    --ai:#6b5fa6;
+    --ai-soft:#eae7f4;
+    --m365:#b08a2e;
+    --m365-soft:#f4ecd9;
+    --serif: Georgia, 'Iowan Old Style', 'Times New Roman', serif;
+    --sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    --mono: ui-monospace, 'SF Mono', 'Cascadia Mono', Consolas, monospace;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0;}
+  .page{
+    background:var(--paper);
+    color:var(--ink);
+    font-family:var(--sans);
+    font-size:16px;
+    line-height:1.6;
+    padding:64px 24px 96px;
+  }
+  .doc{
+    max-width:780px;
+    margin:0 auto;
+  }
+  .masthead{
+    border-bottom:2px solid var(--ink);
+    padding-bottom:28px;
+    margin-bottom:36px;
+  }
+  .eyebrow{
+    font-family:var(--mono);
+    font-size:12px;
+    letter-spacing:.12em;
+    text-transform:uppercase;
+    color:var(--signal);
+    margin:0 0 10px;
+  }
+  h1.title{
+    font-family:var(--serif);
+    font-size:38px;
+    line-height:1.15;
+    margin:0 0 12px;
+    text-wrap:balance;
+    font-weight:400;
+  }
+  .dek{
+    font-size:17px;
+    color:var(--ink-soft);
+    max-width:62ch;
+    margin:0;
+  }
+  .meta-row{
+    display:flex;
+    gap:28px;
+    flex-wrap:wrap;
+    margin-top:20px;
+    font-family:var(--mono);
+    font-size:12.5px;
+    color:var(--ink-faint);
+  }
+  .meta-row strong{color:var(--ink-soft); font-weight:600;}
+
+  nav.toc{
+    background:var(--paper-raised);
+    border:1px solid var(--line);
+    padding:20px 24px;
+    margin-bottom:48px;
+    font-size:14px;
+  }
+  nav.toc .toc-label{
+    font-family:var(--mono);
+    font-size:11px;
+    letter-spacing:.1em;
+    text-transform:uppercase;
+    color:var(--ink-faint);
+    margin-bottom:10px;
+  }
+  nav.toc ol{
+    columns:2;
+    column-gap:32px;
+    margin:0;
+    padding:0 0 0 18px;
+  }
+  nav.toc li{margin-bottom:6px; break-inside:avoid;}
+  nav.toc a{color:var(--ink); text-decoration:none; border-bottom:1px solid var(--line);}
+  nav.toc a:hover{border-bottom-color:var(--signal); color:var(--signal);}
+
+  section{margin-bottom:56px;}
+  h2.section-title{
+    font-family:var(--serif);
+    font-weight:400;
+    font-size:26px;
+    margin:0 0 6px;
+    padding-top:4px;
+    border-top:1px solid var(--line);
+    padding-bottom:0;
+    display:flex;
+    align-items:baseline;
+    gap:12px;
+  }
+  h2.section-title .num{
+    font-family:var(--mono);
+    font-size:13px;
+    color:var(--signal);
+  }
+  .section-sub{
+    color:var(--ink-soft);
+    font-size:14.5px;
+    margin:0 0 22px;
+    max-width:64ch;
+  }
+  h3.sub-title{
+    font-family:var(--serif);
+    font-weight:400;
+    font-size:19px;
+    margin:0 0 4px;
+  }
+  p{margin:0 0 14px;}
+  .callout{
+    background:var(--paper-raised);
+    border:1px solid var(--line);
+    border-left:3px solid var(--signal);
+    padding:16px 20px;
+    font-size:14.5px;
+    color:var(--ink-soft);
+    margin:0 0 20px;
+  }
+  .callout strong{color:var(--ink);}
+  .callout.warn{border-left-color:var(--cyber);}
+  .callout.warn strong{color:var(--cyber);}
+
+  /* pipeline */
+  .pipeline{
+    display:flex;
+    flex-direction:column;
+    gap:0;
+  }
+  .pipe-step{
+    display:grid;
+    grid-template-columns:120px 1fr;
+    gap:20px;
+    padding:16px 0;
+    border-top:1px solid var(--line);
+  }
+  .pipe-step:last-child{border-bottom:1px solid var(--line);}
+  .pipe-stage{
+    font-family:var(--mono);
+    font-size:12px;
+    letter-spacing:.06em;
+    text-transform:uppercase;
+    color:var(--signal);
+    padding-top:2px;
+  }
+  .pipe-body h4{
+    font-family:var(--sans);
+    font-weight:600;
+    font-size:15px;
+    margin:0 0 4px;
+  }
+  .pipe-body p{font-size:14.5px; color:var(--ink-soft); margin:0 0 6px;}
+  .tool-tags{display:flex; flex-wrap:wrap; gap:6px;}
+  .tool-tag{
+    font-family:var(--mono);
+    font-size:11.5px;
+    background:var(--signal-soft);
+    color:var(--signal);
+    padding:3px 8px;
+    border-radius:2px;
+  }
+
+  /* episode template timeline */
+  .template-strip{
+    display:flex;
+    border:1px solid var(--line);
+    overflow-x:auto;
+  }
+  .beat{
+    flex:1 0 120px;
+    padding:14px 14px;
+    border-right:1px solid var(--line);
+  }
+  .beat:last-child{border-right:none;}
+  .beat-time{
+    font-family:var(--mono);
+    font-size:11px;
+    color:var(--ink-faint);
+    display:block;
+    margin-bottom:6px;
+  }
+  .beat-name{font-size:13.5px; font-weight:600; margin-bottom:4px;}
+  .beat-desc{font-size:12.5px; color:var(--ink-soft); line-height:1.45;}
+
+  /* season map table */
+  .table-wrap{overflow-x:auto; border:1px solid var(--line);}
+  table{border-collapse:collapse; width:100%; font-size:14px;}
+  th{
+    text-align:left;
+    font-family:var(--mono);
+    font-size:11px;
+    letter-spacing:.06em;
+    text-transform:uppercase;
+    color:var(--ink-faint);
+    padding:10px 14px;
+    border-bottom:1px solid var(--line);
+    white-space:nowrap;
+  }
+  td{
+    padding:12px 14px;
+    border-bottom:1px solid var(--line);
+    vertical-align:top;
+  }
+  tr:last-child td{border-bottom:none;}
+  .tag{
+    display:inline-block;
+    font-family:var(--mono);
+    font-size:11px;
+    padding:2px 7px;
+    border-radius:2px;
+    white-space:nowrap;
+  }
+  .tag.cyber{background:var(--cyber-soft); color:var(--cyber);}
+  .tag.ai{background:var(--ai-soft); color:var(--ai);}
+  .tag.m365{background:var(--m365-soft); color:var(--m365);}
+
+  /* episode rows */
+  .series-block{margin-bottom:36px;}
+  .series-head{
+    display:flex;
+    align-items:baseline;
+    gap:14px;
+    margin-bottom:4px;
+  }
+  .series-head .swatch{
+    width:10px;height:10px;
+    display:inline-block;
+  }
+  .series-head h3{
+    font-family:var(--serif);
+    font-size:21px;
+    font-weight:400;
+    margin:0;
+  }
+  .series-arc{
+    font-size:13.5px;
+    color:var(--ink-soft);
+    margin:0 0 18px;
+    max-width:66ch;
+  }
+  .ep-row{
+    display:grid;
+    grid-template-columns:56px 1fr;
+    gap:18px;
+    padding:16px 0 16px 16px;
+    border-top:1px solid var(--line);
+    border-left:3px solid var(--line);
+  }
+  .ep-row:last-child{border-bottom:1px solid var(--line);}
+  .ep-row.cyber{border-left-color:var(--cyber);}
+  .ep-row.ai{border-left-color:var(--ai);}
+  .ep-row.m365{border-left-color:var(--m365);}
+  .ep-num{
+    font-family:var(--mono);
+    font-size:13px;
+    color:var(--ink-faint);
+    padding-top:3px;
+    font-variant-numeric:tabular-nums;
+  }
+  .ep-title{
+    font-family:var(--serif);
+    font-size:17.5px;
+    margin:0 0 6px;
+  }
+  .ep-meta{
+    font-size:13px;
+    color:var(--ink-soft);
+    margin-bottom:6px;
+  }
+  .ep-meta .label{
+    font-family:var(--mono);
+    font-size:10.5px;
+    text-transform:uppercase;
+    letter-spacing:.05em;
+    color:var(--ink-faint);
+    margin-right:6px;
+  }
+  .ep-meta a{color:var(--signal); text-decoration:none; border-bottom:1px solid var(--signal-soft); font-weight:600;}
+  .ep-meta a:hover{border-bottom-color:var(--signal);}
+  .ep-take{
+    font-size:14px;
+    color:var(--ink);
+    margin-top:8px;
+    padding-top:8px;
+    border-top:1px dashed var(--line);
+  }
+  .ep-take .label{
+    font-family:var(--mono);
+    font-size:10.5px;
+    text-transform:uppercase;
+    letter-spacing:.05em;
+    color:var(--signal);
+    margin-right:6px;
+  }
+
+  ul.plain{margin:0 0 14px; padding-left:20px;}
+  ul.plain li{margin-bottom:6px; font-size:14.5px;}
+
+  .gap-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:16px;
+  }
+  .gap-card{
+    border:1px solid var(--line);
+    padding:16px 18px;
+    background:var(--paper-raised);
+  }
+  .gap-card h4{
+    font-family:var(--sans);
+    font-size:14px;
+    margin:0 0 6px;
+  }
+  .gap-card p{font-size:13.5px; color:var(--ink-soft); margin:0;}
+
+  .next-steps{list-style:none; margin:0; padding:0;}
+  .next-steps li{
+    display:grid;
+    grid-template-columns:26px 1fr;
+    gap:10px;
+    padding:10px 0;
+    border-top:1px solid var(--line);
+    font-size:14.5px;
+  }
+  .next-steps li:last-child{border-bottom:1px solid var(--line);}
+  .next-steps .check{
+    font-family:var(--mono);
+    color:var(--ink-faint);
+  }
+  .next-steps a{color:var(--signal); text-decoration:none; border-bottom:1px solid var(--signal-soft); font-weight:600;}
+  .next-steps a:hover{border-bottom-color:var(--signal);}
+
+  footer.doc-footer{
+    margin-top:64px;
+    padding-top:20px;
+    border-top:2px solid var(--ink);
+    font-family:var(--mono);
+    font-size:11.5px;
+    color:var(--ink-faint);
+  }
+
+  @media (max-width:600px){
+    nav.toc ol{columns:1;}
+    .gap-grid{grid-template-columns:1fr;}
+    .pipe-step{grid-template-columns:1fr;}
+  }
+</style>
+</head>
+<body>
+
+<div class="page">
+<div class="doc">
+
+  <div class="masthead">
+    <p class="eyebrow">Working Plan — Draft v3</p>
+    <h1 class="title">The Ramsac Podcast</h1>
+    <p class="dek">A three-part, constructive-format podcast that turns existing Ramsac blog content into short, plain-English conversations for non-technical business leaders — built so each miniseries pulls listeners through episode 1 to episode 5.</p>
+    <div class="meta-row">
+      <span><strong>Source</strong> Granola — Ramsac Podcast meeting w/ Louise Howland</span>
+      <span><strong>Audience</strong> SMB &amp; charity/professional-services leadership, 50–500 users, weighted toward C-suite &amp; IS/IT leaders</span>
+      <span><strong>Format</strong> 3 miniseries × 5 episodes</span>
+    </div>
+  </div>
+
+  <nav class="toc">
+    <div class="toc-label">Contents</div>
+    <ol>
+      <li><a href="#brief">1. The brief, in one page</a></li>
+      <li><a href="#pipeline">2. Production pipeline &amp; tools</a></li>
+      <li><a href="#format">3. Episode format &amp; template</a></li>
+      <li><a href="#season">4. Season map &amp; sequencing logic</a></li>
+      <li><a href="#s-cyber">5. Miniseries I — Cybersecurity</a></li>
+      <li><a href="#s-ai">6. Miniseries II — AI</a></li>
+      <li><a href="#s-m365">7. Miniseries III — Microsoft 365</a></li>
+      <li><a href="#gaps">8. Gaps &amp; net-new episodes needed</a></li>
+      <li><a href="#retention">9. Cross-series retention mechanics</a></li>
+      <li><a href="#next">10. Next steps &amp; open decisions</a></li>
+    </ol>
+  </nav>
+
+  <section id="brief">
+    <h2 class="section-title"><span class="num">01</span> The brief, in one page</h2>
+    <p class="section-sub">Pulled from the Granola notes on the Ramsac Podcast meeting, so the rest of this plan can be checked against it.</p>
+    <div class="callout">
+      <strong>Goal —</strong> an AI-produced podcast that sounds like a natural two-person conversation: educational, non-technical, business-case led. Ramsac branding stays subtle, with a soft call-to-action only at the end of each episode.<br><br>
+      <strong>Audience —</strong> SMBs (50–500 users) and C-suite readers, weighted toward two buckets: charities/not-for-profit, and professional services.<br><br>
+      <strong>Verticals —</strong> Cybersecurity (topical, already the strongest performer on the blog), AI (an evolving, fast-growing audience), Microsoft 365 (an "underused features" angle — value people are already paying for and not using).<br><br>
+      <strong>Format —</strong> miniseries of ~5 bite-sized episodes per theme, each vertical building as one coherent block rather than standalone episodes.<br><br>
+      <strong>Constraint —</strong> Ramsac's site migrates in-house on <strong>13 July</strong>; new written content is on hold until then. This plan is unaffected — podcast scripting and audio production don't depend on the CMS — but publishing/embedding on ramsac.com should be sequenced after the migration.
+    </div>
+    <div class="callout warn">
+      <strong>Content policy —</strong> no polarizing subject matter: no politics, geopolitics, or religion, even where a source blog post touches on it. Where a blog post's hook is geopolitical or otherwise charged (e.g. the original Middle East cyber-risk article), reframe the episode around the underlying, apolitical business or technical mechanism rather than the current-events angle — the stakes still land without the flashpoint. Applied retroactively to Cybersecurity EP01 below; worth a final pass over the rest of the season map before scripting, since a source article's framing can shift after this plan was first drafted.
+    </div>
+  </section>
+
+  <section id="pipeline">
+    <h2 class="section-title"><span class="num">02</span> Production pipeline &amp; tools</h2>
+    <p class="section-sub">The Granola action item was: pull the blog, find the gaps, draft scripts. This is the pipeline that turns a blog post into a published, on-brand episode.</p>
+    <div class="pipeline">
+      <div class="pipe-step">
+        <div class="pipe-stage">01 · Source</div>
+        <div class="pipe-body">
+          <h4>Mine existing blog posts per vertical</h4>
+          <p>Each episode maps to one or two existing articles (see miniseries tables below) rather than starting from a blank page — reuses content Ramsac already knows performs, and keeps the podcast consistent with what's published on the site.</p>
+          <div class="tool-tags"><span class="tool-tag">ramsac.com/blog</span><span class="tool-tag">Category pages by vertical</span></div>
+        </div>
+      </div>
+      <div class="pipe-step">
+        <div class="pipe-stage">02 · Script</div>
+        <div class="pipe-body">
+          <h4>Convert the article into a two-host conversation</h4>
+          <p>Not a read-aloud of the blog. One host plays the informed generalist asking the questions a business owner would actually ask; the other plays the specialist who answers in plain language, with one concrete example per episode. Claude drafts from the source article + the episode brief below; a human pass checks accuracy, tone, that no client-identifying detail leaks from case-study material, and that nothing in the content-policy callout above has slipped back in.</p>
+          <div class="tool-tags"><span class="tool-tag">Claude (script draft)</span><span class="tool-tag">Human review — Louise</span></div>
+        </div>
+      </div>
+      <div class="pipe-step">
+        <div class="pipe-stage">03 · Voice</div>
+        <div class="pipe-body">
+          <h4>Generate two consistent host voices</h4>
+          <p>Two options, different tradeoffs: NotebookLM's Audio Overview generates a two-host conversation directly from source docs fastest, but voice/pacing isn't fully controllable episode-to-episode, which matters for a recognizable, returning show. ElevenLabs (or Play.ht) with two cloned/designed voices costs more setup but keeps the same two "hosts" recognizable across all 15 episodes — recommended, since recurring hosts are part of what makes a miniseries feel like a series.</p>
+          <div class="tool-tags"><span class="tool-tag">ElevenLabs Studio (recommended)</span><span class="tool-tag">NotebookLM Audio Overview (fast alternative)</span></div>
+        </div>
+      </div>
+      <div class="pipe-step">
+        <div class="pipe-stage">04 · Assemble</div>
+        <div class="pipe-body">
+          <h4>Add intro, outro, and the soft CTA</h4>
+          <p>A fixed, short intro/outro bed (same music, same 8–10 second cold open) is what makes fifteen AI-generated episodes read as one show rather than fifteen one-offs. The CTA line sits after the recap, before the outro music, and is voiced by the host — not a separate ad-style insert.</p>
+          <div class="tool-tags"><span class="tool-tag">Descript / Audacity</span><span class="tool-tag">Royalty-free intro bed</span></div>
+        </div>
+      </div>
+      <div class="pipe-step">
+        <div class="pipe-stage">05 · QA</div>
+        <div class="pipe-body">
+          <h4>Full listen-through before release</h4>
+          <p>AI voice + AI script both need a human check for factual accuracy (dates, product names, figures), mispronunciations, and brand tone — this is the step most likely to get skipped under time pressure and shouldn't be.</p>
+          <div class="tool-tags"><span class="tool-tag">Louise sign-off</span></div>
+        </div>
+      </div>
+      <div class="pipe-step">
+        <div class="pipe-stage">06 · Publish</div>
+        <div class="pipe-body">
+          <h4>Distribute and embed</h4>
+          <p>Host on Spotify for Podcasters or Buzzsprout for the RSS feed (Apple/Spotify/YouTube Music in one submission); embed the player on the relevant ramsac.com blog post once the site migration lands. Cover art built once per miniseries, not once per episode, in Canva.</p>
+          <div class="tool-tags"><span class="tool-tag">Spotify for Podcasters</span><span class="tool-tag">Buzzsprout</span><span class="tool-tag">Canva (cover art)</span></div>
+        </div>
+      </div>
+      <div class="pipe-step">
+        <div class="pipe-stage">07 · Repurpose</div>
+        <div class="pipe-body">
+          <h4>Cut the transcript back into marketing assets</h4>
+          <p>The generated transcript becomes a short LinkedIn post per episode and a "listen to this episode" callout on the source blog post — closing the loop back to the article it came from.</p>
+          <div class="tool-tags"><span class="tool-tag">Transcript → LinkedIn</span><span class="tool-tag">Blog embed</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="format">
+    <h2 class="section-title"><span class="num">03</span> Episode format &amp; template</h2>
+    <p class="section-sub">Same skeleton every episode (8–12 minutes total) so the show has a recognizable shape and editing stays fast. Two recurring hosts throughout: <em>the Generalist</em> (asks the questions a director/trustee would ask) and <em>the Specialist</em> (answers in plain language, one story per episode).</p>
+    <div class="template-strip">
+      <div class="beat">
+        <span class="beat-time">0:00–0:20</span>
+        <div class="beat-name">Cold open</div>
+        <div class="beat-desc">One real-world line that states the stakes — no branding yet.</div>
+      </div>
+      <div class="beat">
+        <span class="beat-time">0:20–0:45</span>
+        <div class="beat-name">Intro</div>
+        <div class="beat-desc">Show + episode title, one line on where it sits in the series.</div>
+      </div>
+      <div class="beat">
+        <span class="beat-time">0:45–7:30</span>
+        <div class="beat-name">The conversation</div>
+        <div class="beat-desc">Generalist asks, Specialist answers; one concrete example or near-miss anecdote.</div>
+      </div>
+      <div class="beat">
+        <span class="beat-time">7:30–8:45</span>
+        <div class="beat-name">What ramsac sees</div>
+        <div class="beat-desc">Recurring segment: a field observation that earns credibility without a sales pitch.</div>
+      </div>
+      <div class="beat">
+        <span class="beat-time">8:45–9:30</span>
+        <div class="beat-name">Recap</div>
+        <div class="beat-desc">The single takeaway, said in one sentence, plus a next-episode teaser.</div>
+      </div>
+      <div class="beat">
+        <span class="beat-time">9:30–10:00</span>
+        <div class="beat-name">Soft CTA</div>
+        <div class="beat-desc">One line, host-voiced: "if this sounds familiar, ramsac's happy to talk it through."</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="season">
+    <h2 class="section-title"><span class="num">04</span> Season map &amp; sequencing logic</h2>
+    <p class="section-sub">The three verticals release as three back-to-back seasons rather than interleaved, so a new listener can find the show, binge one complete arc, and be handed straight into the next rather than waiting weeks between related episodes.</p>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Order</th><th>Miniseries</th><th>Why here</th><th>Arc shape</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span class="tag cyber">1st</span></td>
+            <td>Cybersecurity</td>
+            <td>Already the strongest-performing topic on the blog — proven demand, easiest episode 1 to get shares on.</td>
+            <td>Risk exposure → everyday attacks → internal risk → proof it works → audit &amp; act</td>
+          </tr>
+          <tr>
+            <td><span class="tag ai">2nd</span></td>
+            <td>AI</td>
+            <td>Rides the audience the cybersecurity season built, while interest in AI is still climbing rather than plateaued.</td>
+            <td>Should we adopt → which tool → is it private → is our data ready → budget &amp; plan</td>
+          </tr>
+          <tr>
+            <td><span class="tag m365">3rd</span></td>
+            <td>Microsoft 365</td>
+            <td>Needs a warmed, trusting audience — "features you're not using" lands better once listeners already believe ramsac knows their stack.</td>
+            <td>Hidden value → pick the right tool → hybrid work → platform strategy → lifecycle risk</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section id="s-cyber">
+    <h2 class="section-title"><span class="num">05</span> Miniseries I — Cybersecurity</h2>
+    <div class="series-block">
+      <div class="series-head"><span class="swatch" style="background:var(--cyber)"></span><h3>Five episodes, in order</h3></div>
+      <p class="series-arc">Arc: starts by establishing that the listener's organisation <em>is</em> a target — because of what's actually exposed, not because of the news cycle — walks through where attacks actually show up day to day, turns the lens inward to insider risk, proves the whole thing with a real stopped attack, then closes on the audit-and-insurance episode that's the natural point to reach out to ramsac.</p>
+
+      <div class="ep-row cyber">
+        <div class="ep-num">EP01</div>
+        <div>
+          <h4 class="ep-title">You're a Target Whether You Know It or Not</h4>
+          <div class="ep-meta"><span class="label">Source</span>"Ethical Hacking: What Does It Mean?" <em>(swapped from the original Middle East cyber-risk article per the content policy in §1 — same stakes-setting job, none of the geopolitical framing)</em></div>
+          <div class="ep-meta"><span class="label">Builds</span>Series opener — sets the stakes for everything that follows.</div>
+          <div class="ep-meta"><span class="label">Script</span><a href="../scripts/cybersecurity-ep01/script.html">Full draft script — v6, recalibrated for C-suite/IS-IT audience →</a></div>
+          <div class="ep-take"><span class="label">Takeaway</span>You don't have to be newsworthy to be exploitable — a weak password, an unpatched server, or an exposed file is all an attacker needs, and a real "white hat" test shows exactly how fast that gets found.</div>
+        </div>
+      </div>
+      <div class="ep-row cyber">
+        <div class="ep-num">EP02</div>
+        <div>
+          <h4 class="ep-title">The Attacks Hiding in the Apps You Already Use</h4>
+          <div class="ep-meta"><span class="label">Source</span>"Beware of Microsoft Teams impersonation attacks" + "Understanding the ClickFix attack"</div>
+          <div class="ep-meta"><span class="label">Builds</span>From "you're exploitable" to "here's what that actually looks like on a Tuesday."</div>
+          <div class="ep-take"><span class="label">Takeaway</span>Modern attacks arrive inside tools staff already trust (Teams, browser prompts) — the tell-tale signs are learnable in two minutes.</div>
+        </div>
+      </div>
+      <div class="ep-row cyber">
+        <div class="ep-num">EP03</div>
+        <div>
+          <h4 class="ep-title">The Threat Already Inside Your Walls</h4>
+          <div class="ep-meta"><span class="label">Source</span>"How to identify and protect against insider threats within your organisation"</div>
+          <div class="ep-meta"><span class="label">Builds</span>From external attackers to the harder conversation: risk from people already inside.</div>
+          <div class="ep-take"><span class="label">Takeaway</span>Most insider risk is carelessness, not malice — and it's addressed with process and culture, not just more software.</div>
+        </div>
+      </div>
+      <div class="ep-row cyber">
+        <div class="ep-num">EP04</div>
+        <div>
+          <h4 class="ep-title">Anatomy of a Near-Miss</h4>
+          <div class="ep-meta"><span class="label">Source</span>"How a real cyber attack was stopped in minutes"</div>
+          <div class="ep-meta"><span class="label">Builds</span>Everything from EP01–03 made concrete: a real case, told as a story.</div>
+          <div class="ep-take"><span class="label">Takeaway</span>Preparedness isn't theoretical — this is what it looked like when it actually paid off, minute by minute.</div>
+        </div>
+      </div>
+      <div class="ep-row cyber">
+        <div class="ep-num">EP05</div>
+        <div>
+          <h4 class="ep-title">Are You Actually Covered?</h4>
+          <div class="ep-meta"><span class="label">Source</span>"Cyber insurance: is your cover still fit for purpose?" + "The UK Cyber Security and Resilience Bill" <em>(keep this strictly compliance/procedural — what the Bill requires, not a debate about it)</em></div>
+          <div class="ep-meta"><span class="label">Builds</span>Closes the loop: now that the listener believes the risk is real, this is the "so now what" episode.</div>
+          <div class="ep-take"><span class="label">Takeaway</span>Regulation and insurance are both moving targets — the finale's action item is "get your posture audited," which is where the CTA lands naturally.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="s-ai">
+    <h2 class="section-title"><span class="num">06</span> Miniseries II — AI</h2>
+    <div class="series-block">
+      <div class="series-head"><span class="swatch" style="background:var(--ai)"></span><h3>Five episodes, in order</h3></div>
+      <p class="series-arc">Arc: opens on the adoption question every leadership team is quietly having, moves to a practical tool choice, then a trust/privacy question, then a data-readiness reality check, and closes on the strategic budgeting conversation.</p>
+
+      <div class="ep-row ai">
+        <div class="ep-num">EP01</div>
+        <div>
+          <h4 class="ep-title">Should You Be Using AI at Work Yet?</h4>
+          <div class="ep-meta"><span class="label">Source</span>"The unintended consequences of blocking AI at work" + "The pros and cons of AI chatbots for business"</div>
+          <div class="ep-meta"><span class="label">Builds</span>Series opener — the debate every leadership team is already having informally.</div>
+          <div class="ep-take"><span class="label">Takeaway</span>Blanket-blocking AI doesn't remove the risk, it just pushes staff to use it unsupervised — the real choice is how to adopt, not whether.</div>
+        </div>
+      </div>
+      <div class="ep-row ai">
+        <div class="ep-num">EP02</div>
+        <div>
+          <h4 class="ep-title">Copilot vs ChatGPT: Picking Your AI Co-Pilot</h4>
+          <div class="ep-meta"><span class="label">Source</span>"Copilot vs ChatGPT: Which is Right For You?" + "What's new in Microsoft Copilot"</div>
+          <div class="ep-meta"><span class="label">Builds</span>From "should we" to "which one" — the first practical decision.</div>
+          <div class="ep-take"><span class="label">Takeaway</span>The right tool depends on where your data already lives and what you're trying to do — not on which one is "better" in the abstract.</div>
+        </div>
+      </div>
+      <div class="ep-row ai">
+        <div class="ep-num">EP03</div>
+        <div>
+          <h4 class="ep-title">Is What You Type Into AI Actually Private?</h4>
+          <div class="ep-meta"><span class="label">Source</span>"How confidential is ChatGPT" (referenced by Louise as a high performer — see note in §8) + "Microsoft Copilot green shield explained"</div>
+          <div class="ep-meta"><span class="label">Builds</span>Now that a tool's picked, the trust question that decides whether staff actually use it.</div>
+          <div class="ep-take"><span class="label">Takeaway</span>Confidentiality depends on which product and which settings — the green shield indicator is the two-second check most people never learn.</div>
+        </div>
+      </div>
+      <div class="ep-row ai">
+        <div class="ep-num">EP04</div>
+        <div>
+          <h4 class="ep-title">Is Your Data Even Ready for AI?</h4>
+          <div class="ep-meta"><span class="label">Source</span>"AI is ready. But is your data clean, secure, and Copilot-ready?"</div>
+          <div class="ep-meta"><span class="label">Builds</span>The reality check after two episodes of "yes, and here's how" — the thing that actually delays rollouts.</div>
+          <div class="ep-take"><span class="label">Takeaway</span>AI output is only as good as the mess (or order) already in your files and permissions — this is the checklist to run before go-live.</div>
+        </div>
+      </div>
+      <div class="ep-row ai">
+        <div class="ep-num">EP05</div>
+        <div>
+          <h4 class="ep-title">Budgeting for the AI Era</h4>
+          <div class="ep-meta"><span class="label">Source</span>"Does your organisation have an AI budget?" + "The AI shift in cyber risk: what it means for UK business leaders"</div>
+          <div class="ep-meta"><span class="label">Builds</span>Closes the arc by turning four episodes of "how" into a leadership-level "how much, and what's the risk trade-off."</div>
+          <div class="ep-take"><span class="label">Takeaway</span>AI spend and AI risk should be planned together, not in separate conversations — the finale's CTA is a readiness conversation, same shape as the cybersecurity finale.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="s-m365">
+    <h2 class="section-title"><span class="num">07</span> Miniseries III — Microsoft 365</h2>
+    <div class="series-block">
+      <div class="series-head"><span class="swatch" style="background:var(--m365)"></span><h3>Five episodes, in order</h3></div>
+      <p class="series-arc">Arc: opens with the "you're already paying for this" hook, gives one concrete tool-choice episode (mirroring the AI season's shape on purpose, for format familiarity), moves into hybrid work and platform strategy, and closes on lifecycle risk — the natural bridge back into a health-check CTA.</p>
+
+      <div class="ep-row m365">
+        <div class="ep-num">EP01</div>
+        <div>
+          <h4 class="ep-title">The Features You're Already Paying For</h4>
+          <div class="ep-meta"><span class="label">Source</span>"Microsoft Business Standard vs Premium: Which is right for you?" + "Introducing the ramsac Data Security Framework"</div>
+          <div class="ep-meta"><span class="label">Builds</span>Series opener — the "underused features" angle stated plainly.</div>
+          <div class="ep-take"><span class="label">Takeaway</span>Most organisations are licensed for tools they've never turned on — a five-minute audit of your tier usually finds one.</div>
+        </div>
+      </div>
+      <div class="ep-row m365">
+        <div class="ep-num">EP02</div>
+        <div>
+          <h4 class="ep-title">Planner or Project? Picking the Right Tool for the Job</h4>
+          <div class="ep-meta"><span class="label">Source</span>"Which to use: Microsoft Planner or Microsoft Project?"</div>
+          <div class="ep-meta"><span class="label">Builds</span>First concrete decision episode — deliberately the same shape as the AI season's EP02, so returning listeners recognise the pattern.</div>
+          <div class="ep-take"><span class="label">Takeaway</span>Task-tracking and true project management solve different problems — picking the wrong one is why "we tried Planner and it didn't stick" happens.</div>
+        </div>
+      </div>
+      <div class="ep-row m365">
+        <div class="ep-num">EP03</div>
+        <div>
+          <h4 class="ep-title">Making Hybrid Work, Actually Work</h4>
+          <div class="ep-meta"><span class="label">Source</span>"What is Microsoft Places and why it matters for hybrid work"</div>
+          <div class="ep-meta"><span class="label">Builds</span>From individual tool choice to a whole-office problem.</div>
+          <div class="ep-take"><span class="label">Takeaway</span>The tooling to fix "who's actually in the office today" already exists in your licence — most teams have just never configured it.</div>
+        </div>
+      </div>
+      <div class="ep-row m365">
+        <div class="ep-num">EP04</div>
+        <div>
+          <h4 class="ep-title">From Quick Fix to Strategic Platform</h4>
+          <div class="ep-meta"><span class="label">Source</span>"From quick fix to strategic platform: getting SharePoint right after the pandemic"</div>
+          <div class="ep-meta"><span class="label">Builds</span>Zooms out from single features to the platform-level decisions made in a hurry in 2020 that now need revisiting.</div>
+          <div class="ep-take"><span class="label">Takeaway</span>The SharePoint setup that got you through lockdown was never meant to be permanent — treating it as a strategic asset now avoids a bigger rebuild later.</div>
+        </div>
+      </div>
+      <div class="ep-row m365">
+        <div class="ep-num">EP05</div>
+        <div>
+          <h4 class="ep-title">The End-of-Support Countdown</h4>
+          <div class="ep-meta"><span class="label">Source</span>"Windows Server 2016 end of support in Jan 2027" + "Microsoft Publisher is being retired"</div>
+          <div class="ep-meta"><span class="label">Builds</span>Closes the series on urgency and risk — mirrors the cybersecurity and AI finales' "act now" shape.</div>
+          <div class="ep-take"><span class="label">Takeaway</span>End-of-support dates don't announce themselves — the finale's CTA is a lifecycle/infrastructure health check before the deadline picks the timeline for you.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="gaps">
+    <h2 class="section-title"><span class="num">08</span> Gaps &amp; net-new episodes needed</h2>
+    <p class="section-sub">The Granola action item was to identify gaps, not just repackage what exists. Two kinds of gap showed up while mapping the blog to episodes.</p>
+    <div class="gap-grid">
+      <div class="gap-card">
+        <h4>Unverified source: "How confidential is ChatGPT"</h4>
+        <p>Louise named this in the meeting as a high performer, but it didn't appear on the current AI or Microsoft 365 category pages — it may be older, paginated, or retitled. Worth confirming the live URL before EP03 of the AI season is scripted, in case it's been merged into "Microsoft Copilot green shield explained" or archived ahead of the 13 July migration.</p>
+      </div>
+      <div class="gap-card">
+        <h4>No foundational cybersecurity 101</h4>
+        <p>Every existing cybersecurity article assumes some baseline (MFA, phishing, backups). For a podcast audience that may be less technical than blog readers, consider one net-new, non-blog-sourced trailer episode — "The Five Things We Assume You Already Have" — released before EP01 to level-set trustees and non-IT C-suite listeners.</p>
+      </div>
+      <div class="gap-card">
+        <h4>No backup / disaster-recovery article</h4>
+        <p>None of the nine cybersecurity articles cover backup or recovery directly, despite it being the single most common "why didn't this cost us the business" factor in real incidents. Recommend a net-new script for a future cybersecurity season 2, not squeezed into this first five.</p>
+      </div>
+      <div class="gap-card">
+        <h4>No AI article aimed at charities specifically</h4>
+        <p>Given charities/not-for-profit is one of the two named audience buckets, all nine AI articles read as generic-business. Consider one script (net-new, or adapted from EP01/EP04) that reframes the adoption and data-readiness questions for a trustee board rather than a commercial C-suite.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="retention">
+    <h2 class="section-title"><span class="num">09</span> Cross-series retention mechanics</h2>
+    <p class="section-sub">The brief asked specifically for miniseries that make people want to hear the whole run. Three mechanics do that work:</p>
+    <ul class="plain">
+      <li><strong>Episode-to-episode callbacks.</strong> Each episode's "Recap" beat ends with one line pointing at what the next episode answers ("...which is exactly why insider risk is worth a closer look — next time.") rather than a generic "thanks for listening."</li>
+      <li><strong>Season finales tease the next season.</strong> EP05 of Cybersecurity closes with a 15-second teaser for the AI season; EP05 of AI teases Microsoft 365. This is the one place branding can be slightly less subtle, since it's a genuine content pointer rather than an ad.</li>
+      <li><strong>A recurring segment, not just a recurring format.</strong> "What ramsac sees" in every episode is the through-line that makes the show feel authored by one team even though the topics rotate — it's also where credibility is built without a sales pitch, which is what makes the closing soft CTA land as helpful rather than promotional.</li>
+    </ul>
+  </section>
+
+  <section id="next">
+    <h2 class="section-title"><span class="num">10</span> Next steps &amp; open decisions</h2>
+    <ul class="next-steps">
+      <li><span class="check">—</span><span>Cybersecurity EP01 pilot script is at draft v6, recalibrated for the C-suite/IS-IT audience — <a href="../scripts/cybersecurity-ep01/script.html">read the full script</a> — ready for the team read-through. One line in it (insurance-renewal pressure) is flagged inline as unverified and needs a real ramsac figure before recording.</span></li>
+      <li><span class="check">—</span><span>Confirm the exact URL/status of "How confidential is ChatGPT" before scripting AI EP03.</span></li>
+      <li><span class="check">—</span><span>Name the show and the two recurring host personas (working names: "the Generalist" / "the Specialist") — needed before any voice work starts, since voice choice should match the names.</span></li>
+      <li><span class="check">—</span><span>Decide ElevenLabs vs NotebookLM for voice generation — recommend ElevenLabs for host consistency across 15 episodes; flag the cost/setup tradeoff to Louise for sign-off.</span></li>
+      <li><span class="check">—</span><span>Sequence publishing/embedding after the 13 July site migration, so episode embeds land on the final blog post URLs rather than ones that move.</span></li>
+      <li><span class="check">—</span><span>Decide whether the two gap-filling foundational episodes (cybersecurity 101, charity-specific AI) ship inside this first 15 or get parked for a "season 2."</span></li>
+    </ul>
+  </section>
+
+  <footer class="doc-footer">
+    Ramsac Podcast — working plan · built from Granola meeting notes + live ramsac.com/blog category pages · 15 episodes across 3 miniseries · v3: linked Cybersecurity EP01 pilot script (draft v6)
+  </footer>
+
+</div>
+</div>
+
+</body>
+</html>
