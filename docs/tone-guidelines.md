@@ -22,6 +22,8 @@ A restate-and-confirm beat is fine once or twice per episode at a genuine turnin
 
 An IS/IT leader doesn't need core concepts (e.g. white-hat vs black-hat hacking) defined at length. Compress 101-level explainers to a single line, or have the "Generalist" host explicitly frame themselves as playing a skeptical-board/CFO role ("I'll play the skeptical board member for a second") rather than asking from genuine ignorance — same conversational friction, but reads as senior rather than naive.
 
-## Don't fabricate stats or attribute unverified claims to ramsac
+## Never include a ramsac-specific number
 
-If a line would land harder with a concrete number (e.g. "X% of insurers now ask for evidence of testing at renewal"), don't invent one and present it as ramsac's own data. Flag it inline as needing a real figure from ramsac's book of business, or keep the claim as a general, unattributed industry observation. Same reasoning for legislation in flux (e.g. the UK Cyber Security and Resilience Bill) — don't assert specifics that haven't been verified as current.
+No episode script cites a ramsac number — not a fabricated one, and not a real one pulled from ramsac's book of business or test data later. This includes case-style figures dressed up as illustrative ("eighteen minutes to breach," "X% of our clients") as much as it includes stats explicitly labeled as ramsac's own. If a line would land harder with a concrete number (e.g. "X% of insurers now ask for evidence of testing at renewal"), keep it qualitative and unattributed ("increasingly," "a growing number of insurers") instead — don't flag it as a placeholder to fill in later, since the number should never be added at all. Generic, non-ramsac illustrative figures used as hypotheticals in dialogue (e.g. a host asking "does this still apply under, say, five hundred seats?") are fine — this rule is about numbers presented as ramsac's own experience or data, not about banning numbers from dialogue entirely.
+
+Same reasoning for legislation in flux (e.g. the UK Cyber Security and Resilience Bill) — don't assert specifics that haven't been verified as current.
