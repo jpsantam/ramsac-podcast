@@ -2,7 +2,7 @@
 
 A three-part, constructive-format podcast that turns existing [ramsac.com/blog](https://www.ramsac.com/blog) content into short, plain-English conversations for business leaders — three miniseries of five episodes each (Cybersecurity → AI → Microsoft 365), released back-to-back.
 
-Built from Granola notes on the Ramsac Podcast meeting with Louise Howland, plus live scrapes of the blog's category pages.
+Built from the Ramsac Podcast kickoff meeting notes, plus live scrapes of the blog's category pages.
 
 **Status:** pre-launch / draft. Nothing here has been recorded or published — see [Open decisions](#open-decisions) below.
 
