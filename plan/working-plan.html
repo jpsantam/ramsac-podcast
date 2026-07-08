@@ -3,25 +3,31 @@
 <head>
 <meta charset="utf-8">
 <title>Ramsac Podcast — Working Plan</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Manrope:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 <style>
   :root{
-    --paper:#f5f6f4;
+    --paper:#F7F5F0;          /* warm off-white canvas */
     --paper-raised:#ffffff;
-    --ink:#171b1a;
-    --ink-soft:#52605c;
-    --ink-faint:#84918c;
-    --line:#d7dcd8;
-    --signal:#0f7a73;
-    --signal-soft:#e1efec;
-    --cyber:#a6483a;
-    --cyber-soft:#f3e4e1;
-    --ai:#6b5fa6;
-    --ai-soft:#eae7f4;
-    --m365:#b08a2e;
-    --m365-soft:#f4ecd9;
-    --serif: Georgia, 'Iowan Old Style', 'Times New Roman', serif;
-    --sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-    --mono: ui-monospace, 'SF Mono', 'Cascadia Mono', Consolas, monospace;
+    --ink:#1C1B18;            /* warm near-black */
+    --ink-soft:#5C584F;
+    --ink-faint:#8A8579;
+    --line:#E8E4DA;
+    --line-strong:#D8D2C3;
+    --signal:#2F5D50;         /* forest green — primary accent */
+    --signal-soft:#E4EDE9;
+    --cyber:#B8752E;          /* ochre — expressive accent (cybersecurity) */
+    --cyber-soft:#F3E6D3;
+    --ai:#5B5A8C;             /* muted indigo (AI miniseries) */
+    --ai-soft:#E8E7F1;
+    --m365:#8C6B3F;           /* warm bronze (Microsoft 365 miniseries) */
+    --m365-soft:#F0E8D8;
+    --flag:#9A6A1E;           /* amber — needs-verification callouts */
+    --flag-soft:#FBF0DC;
+    --serif: 'Fraunces', 'Iowan Old Style', Georgia, serif;
+    --sans: 'Manrope', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+    --mono: 'Space Mono', ui-monospace, 'SF Mono', 'Cascadia Mono', Consolas, monospace;
   }
   *{box-sizing:border-box;}
   body{margin:0;}
@@ -45,7 +51,7 @@
   .eyebrow{
     font-family:var(--mono);
     font-size:12px;
-    letter-spacing:.12em;
+    letter-spacing:.1em;
     text-transform:uppercase;
     color:var(--signal);
     margin:0 0 10px;
@@ -56,7 +62,8 @@
     line-height:1.15;
     margin:0 0 12px;
     text-wrap:balance;
-    font-weight:400;
+    font-weight:500;
+    letter-spacing:-0.012em;
   }
   .dek{
     font-size:17px;
@@ -73,11 +80,12 @@
     font-size:12.5px;
     color:var(--ink-faint);
   }
-  .meta-row strong{color:var(--ink-soft); font-weight:600;}
+  .meta-row strong{color:var(--ink-soft); font-weight:500;}
 
   nav.toc{
     background:var(--paper-raised);
-    border:1px solid var(--line);
+    border:1px solid var(--line-strong);
+    border-radius:8px;
     padding:20px 24px;
     margin-bottom:48px;
     font-size:14px;
@@ -97,14 +105,15 @@
     padding:0 0 0 18px;
   }
   nav.toc li{margin-bottom:6px; break-inside:avoid;}
-  nav.toc a{color:var(--ink); text-decoration:none; border-bottom:1px solid var(--line);}
+  nav.toc a{color:var(--ink); text-decoration:none; border-bottom:1px solid var(--line-strong);}
   nav.toc a:hover{border-bottom-color:var(--signal); color:var(--signal);}
 
   section{margin-bottom:56px;}
   h2.section-title{
     font-family:var(--serif);
-    font-weight:400;
+    font-weight:500;
     font-size:26px;
+    letter-spacing:-0.012em;
     margin:0 0 6px;
     padding-top:4px;
     border-top:1px solid var(--line);
@@ -126,23 +135,24 @@
   }
   h3.sub-title{
     font-family:var(--serif);
-    font-weight:400;
+    font-weight:500;
     font-size:19px;
     margin:0 0 4px;
   }
   p{margin:0 0 14px;}
   .callout{
     background:var(--paper-raised);
-    border:1px solid var(--line);
+    border:1px solid var(--line-strong);
     border-left:3px solid var(--signal);
+    border-radius:8px;
     padding:16px 20px;
     font-size:14.5px;
     color:var(--ink-soft);
     margin:0 0 20px;
   }
   .callout strong{color:var(--ink);}
-  .callout.warn{border-left-color:var(--cyber);}
-  .callout.warn strong{color:var(--cyber);}
+  .callout.warn{border-left-color:var(--flag); background:var(--flag-soft);}
+  .callout.warn strong{color:#7A5216;}
 
   /* pipeline */
   .pipeline{
@@ -180,13 +190,15 @@
     background:var(--signal-soft);
     color:var(--signal);
     padding:3px 8px;
-    border-radius:2px;
+    border-radius:4px;
   }
 
   /* episode template timeline */
   .template-strip{
     display:flex;
-    border:1px solid var(--line);
+    border:1px solid var(--line-strong);
+    border-radius:8px;
+    overflow:hidden;
     overflow-x:auto;
   }
   .beat{
@@ -206,7 +218,7 @@
   .beat-desc{font-size:12.5px; color:var(--ink-soft); line-height:1.45;}
 
   /* season map table */
-  .table-wrap{overflow-x:auto; border:1px solid var(--line);}
+  .table-wrap{overflow-x:auto; border:1px solid var(--line-strong); border-radius:8px;}
   table{border-collapse:collapse; width:100%; font-size:14px;}
   th{
     text-align:left;
@@ -218,6 +230,7 @@
     padding:10px 14px;
     border-bottom:1px solid var(--line);
     white-space:nowrap;
+    background:var(--paper);
   }
   td{
     padding:12px 14px;
@@ -230,7 +243,7 @@
     font-family:var(--mono);
     font-size:11px;
     padding:2px 7px;
-    border-radius:2px;
+    border-radius:4px;
     white-space:nowrap;
   }
   .tag.cyber{background:var(--cyber-soft); color:var(--cyber);}
@@ -247,12 +260,13 @@
   }
   .series-head .swatch{
     width:10px;height:10px;
+    border-radius:2px;
     display:inline-block;
   }
   .series-head h3{
     font-family:var(--serif);
     font-size:21px;
-    font-weight:400;
+    font-weight:500;
     margin:0;
   }
   .series-arc{
@@ -283,6 +297,7 @@
   .ep-title{
     font-family:var(--serif);
     font-size:17.5px;
+    font-weight:500;
     margin:0 0 6px;
   }
   .ep-meta{
@@ -298,14 +313,14 @@
     color:var(--ink-faint);
     margin-right:6px;
   }
-  .ep-meta a{color:var(--signal); text-decoration:none; border-bottom:1px solid var(--signal-soft); font-weight:600;}
+  .ep-meta a{color:var(--signal); text-decoration:none; border-bottom:1px solid var(--signal-soft); font-weight:500;}
   .ep-meta a:hover{border-bottom-color:var(--signal);}
   .ep-take{
     font-size:14px;
     color:var(--ink);
     margin-top:8px;
     padding-top:8px;
-    border-top:1px dashed var(--line);
+    border-top:1px dashed var(--line-strong);
   }
   .ep-take .label{
     font-family:var(--mono);
@@ -325,13 +340,15 @@
     gap:16px;
   }
   .gap-card{
-    border:1px solid var(--line);
+    border:1px solid var(--line-strong);
+    border-radius:8px;
     padding:16px 18px;
     background:var(--paper-raised);
   }
   .gap-card h4{
     font-family:var(--sans);
     font-size:14px;
+    font-weight:600;
     margin:0 0 6px;
   }
   .gap-card p{font-size:13.5px; color:var(--ink-soft); margin:0;}
@@ -350,17 +367,8 @@
     font-family:var(--mono);
     color:var(--ink-faint);
   }
-  .next-steps a{color:var(--signal); text-decoration:none; border-bottom:1px solid var(--signal-soft); font-weight:600;}
+  .next-steps a{color:var(--signal); text-decoration:none; border-bottom:1px solid var(--signal-soft); font-weight:500;}
   .next-steps a:hover{border-bottom-color:var(--signal);}
-
-  footer.doc-footer{
-    margin-top:64px;
-    padding-top:20px;
-    border-top:2px solid var(--ink);
-    font-family:var(--mono);
-    font-size:11.5px;
-    color:var(--ink-faint);
-  }
 
   @media (max-width:600px){
     nav.toc ol{columns:1;}
@@ -379,7 +387,6 @@
     <h1 class="title">The Ramsac Podcast</h1>
     <p class="dek">A three-part, constructive-format podcast that turns existing Ramsac blog content into short, plain-English conversations for non-technical business leaders — built so each miniseries pulls listeners through episode 1 to episode 5.</p>
     <div class="meta-row">
-      <span><strong>Source</strong> Granola — Ramsac Podcast meeting w/ Louise Howland</span>
       <span><strong>Audience</strong> SMB &amp; charity/professional-services leadership, 50–500 users, weighted toward C-suite &amp; IS/IT leaders</span>
       <span><strong>Format</strong> 3 miniseries × 5 episodes</span>
     </div>
@@ -755,10 +762,6 @@
       <li><span class="check">—</span><span>Decide whether the two gap-filling foundational episodes (cybersecurity 101, charity-specific AI) ship inside this first 15 or get parked for a "season 2."</span></li>
     </ul>
   </section>
-
-  <footer class="doc-footer">
-    Ramsac Podcast — working plan · built from Granola meeting notes + live ramsac.com/blog category pages · 15 episodes across 3 miniseries · v3: linked Cybersecurity EP01 pilot script (draft v6)
-  </footer>
 
 </div>
 </div>
