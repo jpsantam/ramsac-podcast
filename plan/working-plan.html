@@ -383,12 +383,15 @@
 <div class="doc">
 
   <div class="masthead">
-    <p class="eyebrow">Working Plan — Draft v3</p>
+    <p class="eyebrow">Working Plan — Draft v5</p>
     <h1 class="title">The Ramsac Podcast</h1>
     <p class="dek">A three-part, constructive-format podcast that turns existing Ramsac blog content into short, plain-English conversations for non-technical business leaders — built so each miniseries pulls listeners through episode 1 to episode 5.</p>
     <div class="meta-row">
       <span><strong>Audience</strong> SMB &amp; charity/professional-services leadership, 50–500 users, weighted toward C-suite &amp; IS/IT leaders</span>
-      <span><strong>Format</strong> 3 miniseries × 5 episodes</span>
+      <span><strong>Format</strong> 3 miniseries × 5 episodes, each capped at 3:15</span>
+    </div>
+    <div class="callout" style="margin-top:24px;">
+      <strong>What changed in v5 —</strong> episode length is now a <strong>hard 3:15 cap</strong> (down from the original 8–12 minute template in §3), driven by the shorter AI-avatar video format. Hosts are named: <strong>Lou</strong> (Generalist) and <strong>Rob</strong> (Specialist). New standing rule: Lou always speaks the episode's cold open. §3's template below is rewritten to match; the season-map episode briefs in §5–7 haven't been individually re-cut yet — only Cybersecurity EP01's script has been reworked to v8 under this rule.
     </div>
   </div>
 
@@ -488,37 +491,40 @@
 
   <section id="format">
     <h2 class="section-title"><span class="num">03</span> Episode format &amp; template</h2>
-    <p class="section-sub">Same skeleton every episode (8–12 minutes total) so the show has a recognizable shape and editing stays fast. Two recurring hosts throughout: <em>the Generalist</em> (asks the questions a director/trustee would ask) and <em>the Specialist</em> (answers in plain language, one story per episode).</p>
+    <p class="section-sub">Same skeleton every episode, capped at a hard 3:15 total, so the show has a recognizable shape and stays inside the shorter AI-avatar video format. Two recurring hosts throughout: <strong>Lou</strong>, the Generalist (asks the questions a director/trustee would ask — and always speaks the episode's cold open, regardless of length) and <strong>Rob</strong>, the Specialist (answers in plain language, one story per episode).</p>
+    <div class="callout warn">
+      <strong>Hard cap, not a target —</strong> 3:15 is a ceiling. Write to fit inside it; cut content rather than let a draft run long and hope the read comes in fast. See <code>docs/tone-guidelines.md</code> for the full standing rule.
+    </div>
     <div class="template-strip">
       <div class="beat">
         <span class="beat-time">0:00–0:20</span>
         <div class="beat-name">Cold open</div>
-        <div class="beat-desc">One real-world line that states the stakes — no branding yet.</div>
+        <div class="beat-desc">Lou states the stakes with one real-world line — no branding yet.</div>
       </div>
       <div class="beat">
-        <span class="beat-time">0:20–0:45</span>
+        <span class="beat-time">0:20–0:35</span>
         <div class="beat-name">Intro</div>
-        <div class="beat-desc">Show + episode title, one line on where it sits in the series.</div>
+        <div class="beat-desc">Rob reacts/confirms; show + episode title, one line on where it sits in the series.</div>
       </div>
       <div class="beat">
-        <span class="beat-time">0:45–7:30</span>
+        <span class="beat-time">0:35–2:35</span>
         <div class="beat-name">The conversation</div>
         <div class="beat-desc">Generalist asks, Specialist answers; one concrete example or near-miss anecdote.</div>
       </div>
       <div class="beat">
-        <span class="beat-time">7:30–8:45</span>
+        <span class="beat-time">2:35–2:55</span>
         <div class="beat-name">What ramsac sees</div>
         <div class="beat-desc">Recurring segment: a field observation that earns credibility without a sales pitch.</div>
       </div>
       <div class="beat">
-        <span class="beat-time">8:45–9:30</span>
+        <span class="beat-time">2:55–3:05</span>
         <div class="beat-name">Recap</div>
-        <div class="beat-desc">The single takeaway, said in one sentence, plus a next-episode teaser.</div>
+        <div class="beat-desc">The single takeaway, said in one sentence.</div>
       </div>
       <div class="beat">
-        <span class="beat-time">9:30–10:00</span>
+        <span class="beat-time">3:05–3:15</span>
         <div class="beat-name">Soft CTA</div>
-        <div class="beat-desc">One line, host-voiced: "if this sounds familiar, ramsac's happy to talk it through."</div>
+        <div class="beat-desc">One line, host-voiced: "if this sounds familiar, we're happy to talk it through."</div>
       </div>
     </div>
   </section>
@@ -567,7 +573,7 @@
           <h4 class="ep-title">You're a Target Whether You Know It or Not</h4>
           <div class="ep-meta"><span class="label">Source</span>"Ethical Hacking: What Does It Mean?" <em>(swapped from the original Middle East cyber-risk article per the content policy in §1 — same stakes-setting job, none of the geopolitical framing)</em></div>
           <div class="ep-meta"><span class="label">Builds</span>Series opener — sets the stakes for everything that follows.</div>
-          <div class="ep-meta"><span class="label">Script</span><a href="../scripts/cybersecurity-ep01/script.html">Full draft script — v6, recalibrated for C-suite/IS-IT audience →</a></div>
+          <div class="ep-meta"><span class="label">Script</span><a href="../scripts/cybersecurity-ep01/script.html">Full draft script — v8, reworked with Lou opening + hard 3:15 cap →</a></div>
           <div class="ep-take"><span class="label">Takeaway</span>You don't have to be newsworthy to be exploitable — a weak password, an unpatched server, or an exposed file is all an attacker needs, and a real "white hat" test shows exactly how fast that gets found.</div>
         </div>
       </div>
@@ -754,9 +760,10 @@
   <section id="next">
     <h2 class="section-title"><span class="num">10</span> Next steps &amp; open decisions</h2>
     <ul class="next-steps">
-      <li><span class="check">—</span><span>Cybersecurity EP01 pilot script is at draft v6, recalibrated for the C-suite/IS-IT audience — <a href="../scripts/cybersecurity-ep01/script.html">read the full script</a> — ready for the team read-through. Per policy, scripts never cite ramsac-specific numbers; the insurance-renewal line stays a general, unattributed industry observation.</span></li>
+      <li><span class="check">—</span><span>Cybersecurity EP01 pilot script is at draft v8 — fully reworked for tone, Lou now opens the cold open, cut to fit the hard 3:15 cap — <a href="../scripts/cybersecurity-ep01/script.html">read the full script</a> — ready for the team read-through. Per policy, scripts never cite ramsac-specific numbers; the insurance-renewal line stays a general, unattributed industry observation.</span></li>
+      <li><span class="check">—</span><span>Hosts are named (Lou = Generalist, Rob = Specialist) and the cold-open/runtime rules are codified in <code>docs/tone-guidelines.md</code> — still open: the show's own name (placeholder "The Ten-Minute Brief" is now inaccurate at this runtime).</span></li>
       <li><span class="check">—</span><span>Confirm the exact URL/status of "How confidential is ChatGPT" before scripting AI EP03.</span></li>
-      <li><span class="check">—</span><span>Name the show and the two recurring host personas (working names: "the Generalist" / "the Specialist") — needed before any voice work starts, since voice choice should match the names.</span></li>
+      <li><span class="check">—</span><span>Re-cut EP02–EP05 briefs across all three miniseries to the 3:15 cap and Lou-opens rule once EP01 is signed off — only EP01 has been reworked under the new rules so far.</span></li>
       <li><span class="check">—</span><span>Decide ElevenLabs vs NotebookLM for voice generation — recommend ElevenLabs for host consistency across 15 episodes; flag the cost/setup tradeoff for sign-off.</span></li>
       <li><span class="check">—</span><span>Sequence publishing/embedding after the 13 July site migration, so episode embeds land on the final blog post URLs rather than ones that move.</span></li>
       <li><span class="check">—</span><span>Decide whether the two gap-filling foundational episodes (cybersecurity 101, charity-specific AI) ship inside this first 15 or get parked for a "season 2."</span></li>

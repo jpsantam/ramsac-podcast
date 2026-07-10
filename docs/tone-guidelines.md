@@ -4,6 +4,12 @@
 
 C-suite executives and IS/IT leaders at SMB and charity/professional-services organisations (50–500 users) — not a general small-business-owner audience. This listener already knows security/AI/M365 basics cold, is pitched constantly and discounts vendor content on sight, and is moved by board-reportable/budget framing and quantified risk more than by explainer content or analogies. Apply this bar to every episode, not just Cybersecurity EP01.
 
+## Runtime and opening (standing rule, added with EP01 v8)
+
+**Hard cap: 3:15.** Not a target — a ceiling. Every script must fit inside 3:15 at conversational pace; cut content to make it fit rather than writing long and hoping the read comes in fast. Estimate at roughly 2.2 spoken words per second when checking a draft against the cap.
+
+**Lou (the Generalist) always speaks the episode's first line** — the cold open — regardless of how long that line runs. Rob doesn't open an episode; he lands the confirming/reacting beat immediately after Lou's cold open instead.
+
 ## Avoid the "explainer podcast" restate-then-confirm pattern
 
 Don't have one host summarize what the other just said as the default transition between lines (e.g. "So it's the same as..." / "That's exactly it."). Real co-hosts don't recap each other in real time — over-using this makes dialogue read as scripted exposition rather than a conversation.
