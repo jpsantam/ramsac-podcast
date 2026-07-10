@@ -4,11 +4,11 @@
 
 C-suite executives and IS/IT leaders at SMB and charity/professional-services organisations (50–500 users) — not a general small-business-owner audience. This listener already knows security/AI/M365 basics cold, is pitched constantly and discounts vendor content on sight, and is moved by board-reportable/budget framing and quantified risk more than by explainer content or analogies. Apply this bar to every episode, not just Cybersecurity EP01.
 
-## Runtime and opening (standing rule, added with EP01 v8)
+## Runtime and opening (standing rule, added with EP01 v8, refined in v9)
 
-**Hard cap: 3:15.** Not a target — a ceiling. Every script must fit inside 3:15 at conversational pace; cut content to make it fit rather than writing long and hoping the read comes in fast. Estimate at roughly 2.2 spoken words per second when checking a draft against the cap.
+**Hard cap: 3:15.** Not a target — a ceiling. Every script must fit inside 3:15; cut content to make it fit rather than writing long and hoping the read comes in fast. Estimate at roughly **2.6 spoken words per second** (~156 wpm) when checking a draft against the cap — this is HeyGen's actual observed render pace (its own validation error measured a 63-word line at 24.3s), not the ~2.2 wps planning estimate used through v8, which was too conservative.
 
-**Lou (the Generalist) always speaks the episode's first line** — the cold open — regardless of how long that line runs. Rob doesn't open an episode; he lands the confirming/reacting beat immediately after Lou's cold open instead.
+**Lou (the Generalist) always speaks the episode's first line.** But on HeyGen's Video Podcast app, the opening shot holds for exactly one line and hard-caps it at **14 seconds of speech (~35 words at the 2.6 wps pace above)** before it errors out — so Lou's opening line must be short and punchy, not the full cold-open anecdote. Rob speaks the second line immediately after, picking up and finishing the story (including any "is this real?" confirmation beat) — his line has no 14s cap. When drafting a cold open: write Lou's hook first and check it against the 14s/~35-word limit before writing anything else.
 
 ## Avoid the "explainer podcast" restate-then-confirm pattern
 
