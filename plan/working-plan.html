@@ -388,10 +388,10 @@
     <p class="dek">A three-part, constructive-format podcast that turns existing Ramsac blog content into short, plain-English conversations for non-technical business leaders — built so each miniseries pulls listeners through episode 1 to episode 5.</p>
     <div class="meta-row">
       <span><strong>Audience</strong> SMB &amp; charity/professional-services leadership, 50–500 users, weighted toward C-suite &amp; IS/IT leaders</span>
-      <span><strong>Format</strong> 3 miniseries × 5 episodes, each capped at 3:15</span>
+      <span><strong>Format</strong> 3 miniseries × 5 episodes, audio-only, each 8–12 min</span>
     </div>
     <div class="callout" style="margin-top:24px;">
-      <strong>What changed in v5 —</strong> episode length is now a <strong>hard 3:15 cap</strong> (down from the original 8–12 minute template in §3), driven by the shorter AI-avatar video format. Hosts are named: <strong>Lou</strong> (Generalist) and <strong>Rob</strong> (Specialist). New standing rule: Lou always speaks the episode's cold open. §3's template below is rewritten to match; the season-map episode briefs in §5–7 haven't been individually re-cut yet — only Cybersecurity EP01's script has been reworked to v8 under this rule.
+      <strong>What changed in v6 — audio-first pivot.</strong> After the HeyGen video demo, the reviewer kept the script and tone but dropped the AI avatars: the show is now <strong>audio-only</strong>. The <strong>3:15 cap goes with them</strong> — it only ever existed to fit HeyGen's short video format, so length reverts to the original <strong>8–12 minute</strong> template in §3. Voice tool is decided: <strong>ElevenLabs</strong> (§2). Hosts stay named <strong>Lou</strong> (Generalist) and <strong>Rob</strong> (Specialist), and Lou still speaks the opening line. Only Cybersecurity EP01 has a full script (now v10, audio-first); the season-map briefs in §5–7 are format-agnostic (topic, source, takeaway) and don't need re-cutting for this change.
     </div>
   </div>
 
@@ -450,8 +450,8 @@
         <div class="pipe-stage">03 · Voice</div>
         <div class="pipe-body">
           <h4>Generate two consistent host voices</h4>
-          <p>Two options, different tradeoffs: NotebookLM's Audio Overview generates a two-host conversation directly from source docs fastest, but voice/pacing isn't fully controllable episode-to-episode, which matters for a recognizable, returning show. ElevenLabs (or Play.ht) with two cloned/designed voices costs more setup but keeps the same two "hosts" recognizable across all 15 episodes — recommended, since recurring hosts are part of what makes a miniseries feel like a series.</p>
-          <div class="tool-tags"><span class="tool-tag">ElevenLabs Studio (recommended)</span><span class="tool-tag">NotebookLM Audio Overview (fast alternative)</span></div>
+          <p>Decided: <strong>ElevenLabs</strong>. Two designed <strong>British</strong> voices kept recognizable across all 15 episodes — Lou (female, natural and conversational) and Rob (male, warm; audition for a naturally-paced voice, since the demo's male read slow and synthetic). Use ElevenLabs' latest v3 model so lines can carry inline emotion tags and controlled pauses — the two things the HeyGen demo had no handle on. NotebookLM's Audio Overview was the fast alternative but it's ruled out here: American auto-voices, no delivery control, and it leans into the "sounds AI-generated" quality the reviewer flagged.</p>
+          <div class="tool-tags"><span class="tool-tag">ElevenLabs (decided)</span><span class="tool-tag">v3 model · British voices</span></div>
         </div>
       </div>
       <div class="pipe-step">
@@ -491,41 +491,38 @@
 
   <section id="format">
     <h2 class="section-title"><span class="num">03</span> Episode format &amp; template</h2>
-    <p class="section-sub">Same skeleton every episode, capped at a hard 3:15 total, so the show has a recognizable shape and stays inside the shorter AI-avatar video format. Two recurring hosts throughout: <strong>Lou</strong>, the Generalist (asks the questions a director/trustee would ask — and always speaks the episode's opening line) and <strong>Rob</strong>, the Specialist (answers in plain language, one story per episode).</p>
+    <p class="section-sub">Same skeleton every episode, running <strong>8–12 minutes</strong> as audio, so the show has a recognizable shape with room for a real conversation. Two recurring hosts throughout: <strong>Lou</strong>, the Generalist (asks the questions a director/trustee would ask — and always speaks the episode's opening line) and <strong>Rob</strong>, the Specialist (answers in plain language, one story per episode).</p>
     <div class="callout warn">
-      <strong>Hard cap, not a target —</strong> 3:15 is a ceiling. Write to fit inside it; cut content rather than let a draft run long and hope the read comes in fast. Estimate at HeyGen's actual render pace, ~2.6 words/sec, not a slower planning guess. See <code>docs/tone-guidelines.md</code> for the full standing rule.
-    </div>
-    <div class="callout warn">
-      <strong>Platform constraint —</strong> HeyGen's Video Podcast app holds the opening shot for exactly one line and caps it at 14 seconds of speech (~35 words). Lou's cold-open line has to be a short hook only; Rob's line right after carries the rest of the story (no 14s cap on line two onward).
+      <strong>Length is a target band, not a hard cap —</strong> aim for 8–12 minutes; write enough conversation to earn the runtime, and cut padding rather than depth. At a conversational ~130–140 words/min with pauses, that's roughly 1,050–1,650 spoken words. See <code>docs/tone-guidelines.md</code> for the full standing rule and the ElevenLabs delivery notes — pacing via punctuation, and emotion tags so a line's tone survives the read.
     </div>
     <div class="template-strip">
       <div class="beat">
-        <span class="beat-time">0:00–0:20</span>
+        <span class="beat-time">0:00–0:45</span>
         <div class="beat-name">Cold open</div>
-        <div class="beat-desc">Lou opens with a short hook (≤14s/~35 words — HeyGen's opening-shot limit); Rob's next line finishes the story.</div>
+        <div class="beat-desc">Lou opens with a hook; Rob's next line picks up and finishes the story.</div>
       </div>
       <div class="beat">
-        <span class="beat-time">0:20–0:35</span>
+        <span class="beat-time">0:45–1:15</span>
         <div class="beat-name">Intro</div>
         <div class="beat-desc">Rob reacts/confirms; show + episode title, one line on where it sits in the series.</div>
       </div>
       <div class="beat">
-        <span class="beat-time">0:35–2:35</span>
+        <span class="beat-time">1:15–8:30</span>
         <div class="beat-name">The conversation</div>
-        <div class="beat-desc">Generalist asks, Specialist answers; one concrete example or near-miss anecdote.</div>
+        <div class="beat-desc">Generalist asks, Specialist answers; one or two concrete examples and real objection-handling, not a teed-up FAQ.</div>
       </div>
       <div class="beat">
-        <span class="beat-time">2:35–2:55</span>
+        <span class="beat-time">8:30–10:00</span>
         <div class="beat-name">What ramsac sees</div>
         <div class="beat-desc">Recurring segment: a field observation that earns credibility without a sales pitch.</div>
       </div>
       <div class="beat">
-        <span class="beat-time">2:55–3:05</span>
+        <span class="beat-time">10:00–10:40</span>
         <div class="beat-name">Recap</div>
         <div class="beat-desc">The single takeaway, said in one sentence.</div>
       </div>
       <div class="beat">
-        <span class="beat-time">3:05–3:15</span>
+        <span class="beat-time">10:40–11:15</span>
         <div class="beat-name">Soft CTA</div>
         <div class="beat-desc">One line, host-voiced: "if this sounds familiar, we're happy to talk it through."</div>
       </div>
@@ -576,7 +573,7 @@
           <h4 class="ep-title">You're a Target Whether You Know It or Not</h4>
           <div class="ep-meta"><span class="label">Source</span>"Ethical Hacking: What Does It Mean?" <em>(swapped from the original Middle East cyber-risk article per the content policy in §1 — same stakes-setting job, none of the geopolitical framing)</em></div>
           <div class="ep-meta"><span class="label">Builds</span>Series opener — sets the stakes for everything that follows.</div>
-          <div class="ep-meta"><span class="label">Script</span><a href="../scripts/cybersecurity-ep01/script.html">Full draft script — v8, reworked with Lou opening + hard 3:15 cap →</a></div>
+          <div class="ep-meta"><span class="label">Script</span><a href="../scripts/cybersecurity-ep01/script.html">Full draft script — v10, audio-first rebuild (8–12 min, ElevenLabs) →</a></div>
           <div class="ep-take"><span class="label">Takeaway</span>You don't have to be newsworthy to be exploitable — a weak password, an unpatched server, or an exposed file is all an attacker needs, and a real "white hat" test shows exactly how fast that gets found.</div>
         </div>
       </div>
@@ -763,12 +760,12 @@
   <section id="next">
     <h2 class="section-title"><span class="num">10</span> Next steps &amp; open decisions</h2>
     <ul class="next-steps">
-      <li><span class="check">—</span><span>Cybersecurity EP01 pilot script is at draft v8 — fully reworked for tone, Lou now opens the cold open, cut to fit the hard 3:15 cap — <a href="../scripts/cybersecurity-ep01/script.html">read the full script</a> — ready for the team read-through. Per policy, scripts never cite ramsac-specific numbers; the insurance-renewal line stays a general, unattributed industry observation.</span></li>
-      <li><span class="check">—</span><span>Hosts are named (Lou = Generalist, Rob = Specialist) and the cold-open/runtime rules are codified in <code>docs/tone-guidelines.md</code> — still open: the show's own name (placeholder "The Ten-Minute Brief" is now inaccurate at this runtime).</span></li>
+      <li><span class="check">—</span><span>Cybersecurity EP01 pilot script is at draft v10 — audio-first rebuild after the HeyGen demo review: avatars dropped, expanded to the ~8-minute end of the 8–12 min band, delivery fixes and ElevenLabs voice/emotion notes baked in — <a href="../scripts/cybersecurity-ep01/script.html">read the full script</a> — ready to render for a team listen-through. Per policy, scripts never cite ramsac-specific numbers; the insurance-renewal line stays a general, unattributed industry observation.</span></li>
+      <li><span class="check">—</span><span>Hosts are named (Lou = Generalist, Rob = Specialist) and the runtime/opening/delivery rules are codified in <code>docs/tone-guidelines.md</code> — still open: the show's own name (placeholder "The Ten-Minute Brief" fits the audio runtime again, but confirm before any cover art or feed setup).</span></li>
       <li><span class="check">—</span><span>Confirm the exact URL/status of "How confidential is ChatGPT" before scripting AI EP03.</span></li>
-      <li><span class="check">—</span><span>Re-cut EP02–EP05 briefs across all three miniseries to the 3:15 cap and Lou-opens rule once EP01 is signed off — only EP01 has been reworked under the new rules so far.</span></li>
-      <li><span class="check">—</span><span>Decide ElevenLabs vs NotebookLM for voice generation — recommend ElevenLabs for host consistency across 15 episodes; flag the cost/setup tradeoff for sign-off.</span></li>
-      <li><span class="check">—</span><span>Sequence publishing/embedding after the 13 July site migration, so episode embeds land on the final blog post URLs rather than ones that move.</span></li>
+      <li><span class="check">—</span><span>Draft full scripts for EP02–EP05 across all three miniseries once EP01 is signed off — the briefs in §5–7 stand as-is (they're format-agnostic); only EP01 has a full script so far.</span></li>
+      <li><span class="check">—</span><span>Voice tool decided: ElevenLabs (audio-only), two British voices, v3 model for emotion/pacing control — see §2. Next action is auditioning and locking the two host voices before EP01 is rendered.</span></li>
+      <li><span class="check">—</span><span>The 13 July site migration has now passed — confirm it landed, then sequence publishing/embedding so episode embeds target the final blog post URLs rather than ones that move.</span></li>
       <li><span class="check">—</span><span>Decide whether the two gap-filling foundational episodes (cybersecurity 101, charity-specific AI) ship inside this first 15 or get parked for a "season 2."</span></li>
     </ul>
   </section>

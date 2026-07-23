@@ -63,16 +63,24 @@
   .callout li{font-size:14.5px; color:var(--ink-soft); margin-bottom:9px;}
   .callout li:last-child{margin-bottom:0;}
   .callout li strong{color:var(--ink);}
+  .callout p{font-size:14.5px; color:var(--ink-soft); margin:0 0 10px;}
+  .callout p:last-child{margin-bottom:0;}
+  .callout code{font-family:var(--mono); font-size:12.5px; background:var(--ink-tint); padding:1px 5px; border-radius:3px; color:var(--ink);}
 
-  .callout.flag{border-left-color:var(--flag); background:var(--flag-soft);}
-  .callout.flag h2{color:#7A5216;}
+  .callout.prod{border-left-color:var(--cyber); background:var(--cyber-soft);}
+  .callout.prod h2{color:#7A5216;}
 
   .key{
     display:flex; gap:22px; flex-wrap:wrap; padding:14px 22px; background:var(--paper-raised);
-    border:1px solid var(--line-strong); border-radius:8px; font-size:13.5px; margin-bottom:48px;
+    border:1px solid var(--line-strong); border-radius:8px; font-size:13.5px; margin-bottom:16px;
   }
   .key .item{display:flex; align-items:center; gap:8px;}
   .swatch{width:11px; height:11px; border-radius:3px; display:inline-block;}
+  .cue-legend{
+    display:flex; gap:10px; flex-wrap:wrap; align-items:center; padding:12px 22px; background:var(--paper-raised);
+    border:1px solid var(--line-strong); border-radius:8px; font-size:13px; color:var(--ink-soft); margin-bottom:48px;
+  }
+  .cue-legend .lbl{font-family:var(--mono); font-size:10.5px; letter-spacing:.06em; text-transform:uppercase; color:var(--ink-faint);}
 
   .beat{margin-bottom:6px;}
   .slug{
@@ -89,16 +97,21 @@
     padding:14px 20px; border-bottom:1px solid var(--line);
   }
   .line:last-child{border-bottom:none;}
-  .line.beat-line{padding:9px 20px;}
+  .line.beat-line{padding:11px 20px;}
   .speaker{
     font-family:var(--mono); font-size:11.5px; letter-spacing:.05em; text-transform:uppercase;
     padding:3px 9px; border-radius:2px; height:fit-content; white-space:nowrap;
   }
   .speaker.generalist{background:var(--ink-tint); color:var(--ink-soft);}
   .speaker.specialist{background:var(--signal-soft); color:var(--signal);}
-  .dialogue{font-size:16px; line-height:1.6; color:var(--ink);}
+  .dialogue{font-size:16px; line-height:1.62; color:var(--ink);}
   .dialogue em{color:var(--ink-soft); font-style:italic;}
   .dialogue .flagged{background:var(--flag-soft); border-bottom:2px dotted var(--flag); padding:0 2px;}
+  .cue{
+    font-family:var(--mono); font-size:10.5px; letter-spacing:.03em; text-transform:uppercase;
+    color:#7A5216; background:var(--flag-soft); border:1px solid var(--line-strong);
+    padding:1px 6px; border-radius:3px; margin-right:3px; white-space:nowrap;
+  }
 
   .direction{
     padding:14px 20px; border-bottom:1px solid var(--line); text-align:center;
@@ -127,12 +140,12 @@
 <div class="doc">
 
   <div class="masthead">
-    <p class="eyebrow">Cybersecurity Miniseries · Episode 01 · Draft v9 — Cold open split for HeyGen's 14s opening-line limit</p>
+    <p class="eyebrow">Cybersecurity Miniseries · Episode 01 · Draft v10 — Audio-first rebuild after HeyGen demo review</p>
     <h1 class="title">You're a Target Whether You Know It or Not</h1>
     <p class="dek">Series opener. Establishes that ordinary technical gaps — not how newsworthy or high-profile a business is — are what make it exploitable. Sets the stakes the rest of the cybersecurity miniseries builds on.</p>
     <div class="meta-row">
       <span><strong>Source</strong> "Ethical Hacking: What Does It Mean?" (ramsac.com/blog)</span>
-      <span><strong>Target runtime</strong> ~2:40–2:50 (hard cap 3:15)</span>
+      <span><strong>Format</strong> Audio-only · target ~8 min</span>
       <span><strong>Audience</strong> C-suite &amp; IS/IT leaders</span>
       <span><strong>Next episode</strong> EP02 — Teams impersonation &amp; ClickFix</span>
     </div>
@@ -140,12 +153,20 @@
 
   <section class="frontmatter">
     <div class="callout">
-      <h2>What changed in v9</h2>
+      <h2>What changed in v10 — audio-first pivot</h2>
       <ul>
-        <li><strong>Cold open split across two lines.</strong> HeyGen's Video Podcast app holds the opening shot for exactly one line and caps it at 14 seconds of speech, so it can't carry the full heist anecdote alone. Lou still speaks first — short hook only ("Picture the least dramatic heist you've ever heard of...") — then Rob delivers the rest of the story as line two, including the "that one's real, I wrote it" beat that used to open Beat 2. Net script length is unchanged; this just re-splits where the line break falls.</li>
-        <li><strong>Runtime re-estimated from HeyGen's own render pace</strong> (its error message measured the old 63-word single line at 24.3s spoken, i.e. ~2.6 words/sec, faster than the ~2.2 wps planning estimate used through v8). At that pace this script now lands around ~2:40–2:50, comfortably under the 3:15 hard cap.</li>
-        <li>Everything else unchanged from v8: same beats, same jokes, same objection/payoff structure, same content-policy compliance (no politics, no ramsac-specific numbers).</li>
+        <li><strong>No more AI avatars; this is now an audio-only podcast.</strong> The HeyGen video demo landed well on script and tone, but the reviewer found the avatars distracting, off-format for how the audience actually listens, and a giveaway that the thing is AI-made. The content stands on its own without them.</li>
+        <li><strong>The 3:15 cap is gone.</strong> That ceiling only ever existed to fit HeyGen's short video format — it was never a content call. Back to the plan's original <strong>8–12 minute</strong> template, cut here to the leaner ~8-minute end of that band. The same praised content now has room to breathe: deeper objection handling, the "automated, not targeted" point drawn out, and a longer <em>What ramsac sees</em> segment.</li>
+        <li><strong>Delivery fixes baked in.</strong> The two pauses the reviewer flagged are rewritten so the stop is motivated rather than stranded, and load-bearing lines carry inline emotion cues (below) so a flat read can't turn a beat like a dry "Fine" into an angry one.</li>
+        <li>Unchanged: the beats, the jokes, the objection/payoff structure, and content-policy compliance — no politics, no ramsac-specific numbers.</li>
       </ul>
+    </div>
+    <div class="callout prod">
+      <h2>Production — ElevenLabs (audio-only)</h2>
+      <p><strong>Model:</strong> <code>eleven_v3</code>. Needed for the inline emotion tags (the <span class="cue">dry</span>-style cues in the script) that keep tone from drifting on delivery. If you drop to a model without tag support, strip the cues and re-check every flagged line by ear.</p>
+      <p><strong>Voices — both British; audition and A/B before locking.</strong> Lou (Generalist, female): candidates <em>Alice</em> (confident, conversational) or <em>Lily</em> (warm) — the female read was already the natural one in the demo, so stay close to it. Rob (Specialist, male): first choice <em>George</em> (warm, mature); <em>Daniel</em> only if you raise Speed. The demo's male read slow and synthetic — fix with a naturally-paced voice, Stability preset <strong>Natural</strong> (not Robust), Speed ~1.05.</p>
+      <p><strong>Pacing is punctuation.</strong> Comma = short breath, full stop = a beat, ellipsis <code>…</code> = trailing/hesitation, em-dash <code>—</code> = a quick self-interruption or cut, blank line between beats = a longer pause. Generate each host's lines on their own voice, then interleave in the edit — don't ask one render to switch speakers.</p>
+      <p><strong>Emotion cues</strong> in brackets — <span class="cue">dry</span> <span class="cue">warm</span> <span class="cue">amused</span> — are ElevenLabs v3 audio tags spoken as direction, never read aloud.</p>
     </div>
   </section>
 
@@ -153,76 +174,116 @@
     <div class="item"><span class="swatch" style="background:var(--ink-tint); border:1px solid var(--ink-faint);"></span> Lou (Generalist) — plays skeptical board/CFO on the listener's behalf</div>
     <div class="item"><span class="swatch" style="background:var(--signal-soft); border:1px solid var(--signal);"></span> Rob (Specialist) — ramsac's voice, answers in plain language</div>
   </div>
+  <div class="cue-legend">
+    <span class="lbl">Cues</span>
+    <span class="cue">dry</span><span class="cue">warm</span><span class="cue">amused</span><span class="cue">conceding</span> = ElevenLabs v3 audio tags — delivery direction, not spoken. <code style="font-family:var(--mono);font-size:12px;">[bracketed, centred]</code> lines are sound/edit directions.
+  </div>
 
   <div class="beat">
-    <div class="slug"><span class="beat-num">BEAT 1</span><span class="beat-time">0:00–0:20</span><span class="beat-name">Cold open</span></div>
+    <div class="slug"><span class="beat-num">BEAT 1</span><span class="beat-time">0:00–0:40</span><span class="beat-name">Cold open</span></div>
     <div class="lines">
       <div class="direction">[No music, no branding — drops straight into the scene]</div>
       <div class="line">
         <span class="speaker generalist">Lou</span>
-        <span class="dialogue">Picture the least dramatic heist you've ever heard of. No masks, no getaway car — just a tester logging in to do the job properly, for once.</span>
+        <span class="dialogue">Picture the least dramatic heist you've ever heard of. No masks. No getaway car. Just a bloke with a coffee, logging in through the front door — because the front door was open.</span>
       </div>
       <div class="line">
         <span class="speaker specialist">Rob</span>
-        <span class="dialogue">And before his coffee's gone cold, he's already inside — not because he's a genius, but because one admin account still had the password it shipped with. Monday's report started with one line: <em>getting in took minutes, not days.</em> That one's real, by the way — I wrote it.</span>
+        <span class="dialogue">And before that coffee's gone cold, he's inside. Not because he's some genius in a hoodie — because one admin account was still running the password it shipped with, straight from the factory. Monday morning, the write-up opened on a single line: <em>getting in took minutes, not days.</em></span>
+      </div>
+      <div class="line">
+        <span class="speaker generalist">Lou</span>
+        <span class="dialogue">…and this is the part where you tell me you made it up.</span>
+      </div>
+      <div class="line">
+        <span class="speaker specialist">Rob</span>
+        <span class="dialogue"><span class="cue">dry</span>I wish. That one's real. I wrote it.</span>
       </div>
       <div class="direction">[Beat of silence. Stinger.]</div>
     </div>
   </div>
 
   <div class="beat">
-    <div class="slug"><span class="beat-num">BEAT 2</span><span class="beat-time">0:20–0:35</span><span class="beat-name">Intro</span></div>
+    <div class="slug"><span class="beat-num">BEAT 2</span><span class="beat-time">0:40–1:05</span><span class="beat-name">Intro</span></div>
     <div class="lines">
-      <div class="line"><span class="speaker generalist">Lou</span><span class="dialogue">Which makes this our show, apparently — Ramsac's cybersecurity series, episode one, opening on a network that fell over before breakfast.</span></div>
+      <div class="line"><span class="speaker generalist">Lou</span><span class="dialogue">Right. So — welcome, I suppose. Ramsac's cybersecurity series, episode one, opening on a company that fell over before breakfast. Cheerful start.</span></div>
       <div class="line"><span class="speaker specialist">Rob</span><span class="dialogue">I did warn you it wasn't glamorous.</span></div>
+      <div class="line"><span class="speaker generalist">Lou</span><span class="dialogue">You said "interesting."</span></div>
+      <div class="line"><span class="speaker specialist">Rob</span><span class="dialogue"><span class="cue">amused</span>Interesting is what we say when we mean "avoidable."</span></div>
     </div>
   </div>
 
   <div class="beat">
-    <div class="slug"><span class="beat-num">BEAT 3</span><span class="beat-time">0:35–2:35</span><span class="beat-name">The conversation</span></div>
+    <div class="slug"><span class="beat-num">BEAT 3</span><span class="beat-time">1:05–5:45</span><span class="beat-name">The conversation</span></div>
     <div class="lines">
-      <div class="line beat-line"><span class="speaker generalist">Lou</span><span class="dialogue">Big company, this one?</span></div>
-      <div class="line beat-line"><span class="speaker specialist">Rob</span><span class="dialogue">Mid-sized. Nobody outside their industry's heard of them. Technically, nothing "happened" — the polite word for a hack you agreed to.</span></div>
-      <div class="line beat-line"><span class="speaker generalist">Lou</span><span class="dialogue">Right — let's deal with the obvious problem. You sell testing. So of course you're going to say everyone needs it.</span></div>
-      <div class="line beat-line"><span class="speaker specialist">Rob</span><span class="dialogue">Guilty as charged. Same logic as the fire brigade telling you to check your smoke alarm — annoying, but not wrong. Find nothing, you've paid for confidence instead of fear. Find something, it's on your terms, not a criminal's — a ranked list, not a panic: what's wrong, what it costs, what to fix first, with the budget you've got.</span></div>
+      <div class="line beat-line"><span class="speaker generalist">Lou</span><span class="dialogue">Big company, this one? Household name?</span></div>
+      <div class="line beat-line"><span class="speaker specialist">Rob</span><span class="dialogue">Mid-sized. Nobody outside their own industry would know them. And technically? Nothing "happened." That's the polite word for a hack you agreed to in advance.</span></div>
+      <div class="line beat-line"><span class="speaker generalist">Lou</span><span class="dialogue">A test. A white-hat thing.</span></div>
+      <div class="line beat-line"><span class="speaker specialist">Rob</span><span class="dialogue">A test. Same skills as the criminal, opposite intent — and a report at the end instead of a ransom note.</span></div>
+      <div class="line beat-line"><span class="speaker generalist">Lou</span><span class="dialogue">Okay. Let's get the obvious objection out of the way, because I'd be thinking it. You sell this. So of course the man who sells testing says everyone needs testing.</span></div>
+      <div class="line beat-line"><span class="speaker specialist">Rob</span><span class="dialogue">Guilty. Completely fair.</span></div>
+      <div class="line beat-line"><span class="speaker generalist">Lou</span><span class="dialogue"><span class="cue">caught off guard</span>That's — you're meant to argue with me there.</span></div>
+      <div class="line beat-line"><span class="speaker specialist">Rob</span><span class="dialogue">Why would I? It's the fire brigade telling you to test your smoke alarm. Annoying. Also correct. Here's the thing, though — find nothing, and you haven't wasted the money, you've bought confidence instead of fear. Find something, and you found it on a Tuesday, on your terms — not at two in the morning from a criminal who's already copied everything.</span></div>
+      <div class="line beat-line"><span class="speaker generalist">Lou</span><span class="dialogue">So it's not the scare-tape, red-writing report.</span></div>
+      <div class="line beat-line"><span class="speaker specialist">Rob</span><span class="dialogue">Opposite. It's a ranked list. What's wrong, what it would actually cost you, what to fix first — matched to the budget you've genuinely got, not the one in a fantasy. Boring. On purpose.</span></div>
       <div class="line beat-line"><span class="speaker generalist">Lou</span><span class="dialogue">No pitch. Just the pattern.</span></div>
-      <div class="line beat-line"><span class="speaker specialist">Rob</span><span class="dialogue">Exactly why it's written that way.</span></div>
-      <div class="line beat-line"><span class="speaker generalist">Lou</span><span class="dialogue">Second objection — I'll play skeptical board member. We're small. Nobody's coming for us.</span></div>
-      <div class="line beat-line"><span class="speaker specialist">Rob</span><span class="dialogue">Backwards, if anything. It's not about being interesting — it's about whether you run digital systems and hold data, and unless you're doing this from a cave, you do. It's also stopped being just criminals asking — <span class="flagged">insurers increasingly want evidence of testing before renewal</span>, and bigger clients ask before they'll sign.</span></div>
-      <div class="line beat-line"><span class="speaker generalist">Lou</span><span class="dialogue">So "optional" quietly became "due diligence."</span></div>
+      <div class="line beat-line"><span class="speaker specialist">Rob</span><span class="dialogue">That's the whole idea.</span></div>
+      <div class="line beat-line"><span class="speaker generalist">Lou</span><span class="dialogue">Before we go further — practical one, because a board will ask it. Does this take our systems down? Are you unplugging things while everyone's trying to work?</span></div>
+      <div class="line beat-line"><span class="speaker specialist">Rob</span><span class="dialogue">No. It's scoped and agreed up front — what's in bounds, what's off-limits, run quietly in the background and out of hours where it matters. Nobody walks in to find the website in bits. The whole point is that it's the rehearsal, not the fire.</span></div>
+      <div class="line beat-line"><span class="speaker generalist">Lou</span><span class="dialogue">So it's the drill, not the drill sergeant.</span></div>
+      <div class="line beat-line"><span class="speaker specialist">Rob</span><span class="dialogue"><span class="cue">amused</span>I'll allow that one.</span></div>
+      <div class="line beat-line"><span class="speaker generalist">Lou</span><span class="dialogue">And when you hand it over — do we just get a to-do list and a bill?</span></div>
+      <div class="line beat-line"><span class="speaker specialist">Rob</span><span class="dialogue">You get a list your own IT can act on — or we do the hands-on part, if you'd rather. Either way it's ranked, not a data-dump: the few things that actually move your risk, first. Honestly, most of a good report is telling you what <em>not</em> to panic about.</span></div>
+      <div class="line beat-line"><span class="speaker generalist">Lou</span><span class="dialogue">Permission to ignore things.</span></div>
+      <div class="line beat-line"><span class="speaker specialist">Rob</span><span class="dialogue">Expensive things, usually. Yes.</span></div>
+      <div class="line beat-line"><span class="speaker generalist">Lou</span><span class="dialogue">Alright — second objection, and now I'm the skeptical board member, arms folded. We're small. We're not a bank. Who's actually coming for us?</span></div>
+      <div class="line beat-line"><span class="speaker specialist">Rob</span><span class="dialogue">That's the one that gets people hurt, because it's backwards. Nobody's picking you off a list because you're fascinating. The attacks that hit small and mid-sized firms aren't chosen — they're automated. A program knocks on ten thousand doors an hour and strolls through whichever ones are unlocked. It never once asks who you are.</span></div>
+      <div class="line beat-line"><span class="speaker generalist">Lou</span><span class="dialogue">Ten thousand doors an hour. So it's not somebody in a dark room picking us out.</span></div>
+      <div class="line beat-line"><span class="speaker specialist">Rob</span><span class="dialogue">It's a script on rented machines, sweeping the whole internet for the same handful of mistakes, on a loop. You're not on a hit list. You're on a map — and the map draws itself.</span></div>
+      <div class="line beat-line"><span class="speaker generalist">Lou</span><span class="dialogue">So the yardstick was never "are we a target."</span></div>
+      <div class="line beat-line"><span class="speaker specialist">Rob</span><span class="dialogue">The yardstick is: do you run digital systems, and do you hold data somebody would rather you didn't lose. Unless you're doing all this from a cave — you do.</span></div>
+      <div class="line beat-line"><span class="speaker generalist">Lou</span><span class="dialogue"><span class="cue">conceding</span>Fine. <span class="cue">warm, not sharp</span>That's — annoyingly hard to argue with.</span></div>
+      <div class="line beat-line"><span class="speaker specialist">Rob</span><span class="dialogue">And it's stopped being only the criminals asking. Your insurer wants evidence of testing before they'll renew the cover. Your bigger clients want it before they'll sign. Quietly, "optional" turned into "due diligence" — and most people find that out the week they need the cover, not the week before.</span></div>
+      <div class="line beat-line"><span class="speaker generalist">Lou</span><span class="dialogue">So the deadline isn't the attacker. It's the <span class="flagged">renewal letter.</span></span></div>
+      <div class="line beat-line"><span class="speaker specialist">Rob</span><span class="dialogue">Half the time, yes. The attack is hypothetical until it isn't. The renewal is on a date.</span></div>
     </div>
   </div>
 
   <div class="beat">
-    <div class="slug"><span class="beat-num">BEAT 4</span><span class="beat-time">2:35–2:55</span><span class="beat-name">What ramsac sees</span></div>
+    <div class="slug"><span class="beat-num">BEAT 4</span><span class="beat-time">5:45–7:00</span><span class="beat-name">What ramsac sees</span></div>
     <div class="lines">
-      <div class="line"><span class="speaker generalist">Lou</span><span class="dialogue">No pitch, just the pattern — so what are you actually finding out there?</span></div>
-      <div class="line"><span class="speaker specialist">Rob</span><span class="dialogue">Almost every test, same short list: a reused password, a missed update, an old account nobody switched off. Nothing exotic. The businesses that improve aren't the ones with better tools — they're the ones who work through the list instead of filing it in a drawer and feeling better about themselves.</span></div>
-      <div class="line"><span class="speaker generalist">Lou</span><span class="dialogue">So the danger's not the vulnerability. It's the drawer.</span></div>
+      <div class="line"><span class="speaker generalist">Lou</span><span class="dialogue">So — no pitch, just the pattern. Across all these tests, what are you actually finding? The real list, not the brochure one.</span></div>
+      <div class="line"><span class="speaker specialist">Rob</span><span class="dialogue">You'll be disappointed by how dull it is. Nearly every test, the same short list. A password somebody reused. An update nobody installed. An old account belonging to someone who left ages ago that nobody ever switched off.</span></div>
+      <div class="line"><span class="speaker generalist">Lou</span><span class="dialogue">No zero-day super-weapon.</span></div>
+      <div class="line"><span class="speaker specialist">Rob</span><span class="dialogue">Almost never. It's housekeeping. And here's the part that actually matters — the firms that get safer aren't the ones who spend the most, or buy the cleverest tool. They're the ones who take the list and work through it. The ones who don't… file it. Feel better for having done a test. Change nothing.</span></div>
+      <div class="line"><span class="speaker generalist">Lou</span><span class="dialogue">So the danger was never really the vulnerability.</span></div>
+      <div class="line"><span class="speaker specialist">Rob</span><span class="dialogue">The danger's the drawer. The report goes in the drawer, and the drawer is where good intentions go to die.</span></div>
+      <div class="line"><span class="speaker generalist">Lou</span><span class="dialogue">It's always the drawer.</span></div>
       <div class="line"><span class="speaker specialist">Rob</span><span class="dialogue">It's always the drawer.</span></div>
     </div>
   </div>
 
   <div class="beat">
-    <div class="slug"><span class="beat-num">BEAT 5</span><span class="beat-time">2:55–3:05</span><span class="beat-name">Recap</span></div>
+    <div class="slug"><span class="beat-num">BEAT 5</span><span class="beat-time">7:00–7:35</span><span class="beat-name">Recap</span></div>
     <div class="lines">
-      <div class="line"><span class="speaker generalist">Lou</span><span class="dialogue">One sentence, then: you don't have to be famous to be exploitable — you just need one unlocked window, and a proper test finds it on your terms, before somebody less polite does.</span></div>
+      <div class="line"><span class="speaker generalist">Lou</span><span class="dialogue">One sentence before you go, because I think it's simpler than people want it to be. You don't have to be famous to be broken into. You need one unlocked window — and a proper test finds it on a quiet Tuesday, before somebody a lot less polite finds it for you.</span></div>
+      <div class="line"><span class="speaker specialist">Rob</span><span class="dialogue"><span class="cue">warm</span>I'd have taken twenty minutes to say that. Yes. Exactly that.</span></div>
     </div>
   </div>
 
   <div class="beat">
-    <div class="slug"><span class="beat-num">BEAT 6</span><span class="beat-time">3:05–3:15</span><span class="beat-name">Soft CTA</span></div>
+    <div class="slug"><span class="beat-num">BEAT 6</span><span class="beat-time">7:35–8:05</span><span class="beat-name">Soft CTA + next-episode tease</span></div>
     <div class="lines">
-      <div class="line"><span class="speaker specialist">Rob</span><span class="dialogue">If nobody's ever tested where your gaps are, we're happy to talk it through. No pitch. Just the pattern.</span></div>
-      <div class="line"><span class="speaker generalist">Lou</span><span class="dialogue">Thanks for listening.</span></div>
-      <div class="line"><span class="speaker specialist">Rob</span><span class="dialogue">See you next time.</span></div>
+      <div class="line"><span class="speaker specialist">Rob</span><span class="dialogue">So — if nobody's ever actually checked where your gaps are, we're happy to walk you through what a test looks like. No pitch. Just the pattern.</span></div>
+      <div class="line"><span class="speaker generalist">Lou</span><span class="dialogue">Next time — the attacks that don't break in at all. They wait for one of your own people to let them in. A Teams message, a browser pop-up, the stuff that looks completely normal.</span></div>
+      <div class="line"><span class="speaker specialist">Rob</span><span class="dialogue">See you then.</span></div>
       <div class="direction">[Outro music bed]</div>
     </div>
   </div>
 
   <footer class="doc-footer">
-    <span>Ramsac Podcast — Cybersecurity EP01 · draft v9 · 2026-07-10</span>
-    <span>~423 spoken words · est. 2:40–2:50 at HeyGen's ~2.6 words/sec render pace (hard cap 3:15) · opening line ≤14s</span>
+    <span>Ramsac Podcast — Cybersecurity EP01 · draft v10 (audio-first) · 2026-07-23</span>
+    <span>~1,060 spoken words · est. ~8:00 at a conversational ~130 wpm with pauses · audio-only, ElevenLabs</span>
   </footer>
 
 </div>
